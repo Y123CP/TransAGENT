@@ -1,0 +1,5743 @@
+source_code_str,trans_code,AlignTrans_alignment,TransMap_alignment
+"def MinSize( A: List[int],  n: int) -> int:
+    
+    curr = A[0]
+    count = 1
+    for i in range(1, n):
+        if A[i] == curr:
+            count += 1
+        else:
+            count -= 1
+            if count == 0:
+                curr = A[i]
+                count = 1
+    max_f = A.count(curr)
+    if max_f <= (n + 1) // 2:
+        return n & 1
+    else:
+        return 2 * max_f - n","int MinSize(std::vector<int>& A, int n) {
+    int curr = A[0];
+    int count = 1;
+    for (int i = 1; i < n; i++) {
+        if (A[i] == curr) {
+            count += 1;
+        } else {
+            count -= 1;
+            if (count == 0) {
+                curr = A[i];
+                count = 1;
+            }
+        }
+    }
+    int max_f = std::count(A.begin(), A.end(), curr);
+    if (max_f <= (n + 1) / 2) {
+        return n & 1;
+    } else {
+        return 2 * max_f - n;
+    }
+}","BLOCK0: 
+```python
+def MinSize( A: List[int],  n: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int MinSize(std::vector<int>& A, int n) {
+```
+
+BLOCK1: 
+```python
+curr = A[0]
+count = 1
+```
+Corresponding Cpp Code:
+```cpp
+int curr = A[0];
+int count = 1;
+```
+
+BLOCK2: 
+```python
+for i in range(1, n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 1; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+if A[i] == curr:
+```
+Corresponding Cpp Code:
+```cpp
+if (A[i] == curr) {
+```
+
+BLOCK4: 
+```python
+count += 1
+```
+Corresponding Cpp Code:
+```cpp
+count += 1;
+```
+
+BLOCK5: 
+```python
+else:
+    count -= 1
+```
+Corresponding Cpp Code:
+```cpp
+} else {
+    count -= 1;
+```
+
+BLOCK6: 
+```python
+if count == 0:
+```
+Corresponding Cpp Code:
+```cpp
+if (count == 0) {
+```
+
+BLOCK7: 
+```python
+curr = A[i]
+count = 1
+```
+Corresponding Cpp Code:
+```cpp
+curr = A[i];
+count = 1;
+```
+
+BLOCK8: 
+```python
+max_f = A.count(curr)
+```
+Corresponding Cpp Code:
+```cpp
+int max_f = std::count(A.begin(), A.end(), curr);
+```
+
+BLOCK9: 
+```python
+if max_f <= (n + 1) // 2:
+```
+Corresponding Cpp Code:
+```cpp
+if (max_f <= (n + 1) / 2) {
+```
+
+BLOCK10: 
+```python
+return n & 1
+```
+Corresponding Cpp Code:
+```cpp
+return n & 1;
+```
+
+BLOCK11: 
+```python
+else:
+    return 2 * max_f - n
+```
+Corresponding Cpp Code:
+```cpp
+} else {
+    return 2 * max_f - n;
+```
+","```cpp
+int MinSize(std::vector<int>& A, int n) { // --- py stmt 1
+    int curr = A[0]; // --- py stmt 2
+    int count = 1; // --- py stmt 3
+    for (int i = 1; i < n; i++) { // --- py stmt 4
+        if (A[i] == curr) { // --- py stmt 5
+            count += 1; // --- py stmt 6
+        } else { // --- py stmt 7
+            count -= 1; // --- py stmt 8
+            if (count == 0) { // --- py stmt 9
+                curr = A[i]; // --- py stmt 10
+                count = 1; // --- py stmt 11
+            }
+        }
+    }
+    int max_f = std::count(A.begin(), A.end(), curr); // --- py stmt 12
+    if (max_f <= (n + 1) / 2) { // --- py stmt 13
+        return n & 1; // --- py stmt 14
+    } else { // --- py stmt 15
+        return 2 * max_f - n; // --- py stmt 16
+    }
+}
+```
+"
+"def frequency( n ,a):
+    mp=dict()
+    for i in range(n):
+        if a[i] in mp:
+            mp[a[i]]+=1
+        else:
+            mp[a[i]]=1
+    ans=[]
+    for i in range(n):
+        ans.append(mp[a[i]])
+        mp[a[i]]-=1
+    return ans","std::vector<int> frequency(int n, std::vector<int> a) {
+    std::unordered_map<int, int> mp;
+    for (int i = 0; i < n; i++) {
+        if (mp.find(a[i]) != mp.end())
+            mp[a[i]]++;
+        else
+            mp[a[i]] = 1;
+    }
+    std::vector<int> ans;
+    for (int i = 0; i < n; i++) {
+        ans.push_back(mp[a[i]]);
+        mp[a[i]]--;
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def frequency( n ,a):
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> frequency(int n, std::vector<int> a) {
+```
+
+BLOCK1: 
+```python
+mp=dict()
+```
+Corresponding Cpp Code:
+```cpp
+std::unordered_map<int, int> mp;
+```
+
+BLOCK2: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+if a[i] in mp:
+```
+Corresponding Cpp Code:
+```cpp
+if (mp.find(a[i]) != mp.end())
+```
+
+BLOCK4: 
+```python
+mp[a[i]]+=1
+```
+Corresponding Cpp Code:
+```cpp
+mp[a[i]]++;
+```
+
+BLOCK5: 
+```python
+else:
+    mp[a[i]]=1
+```
+Corresponding Cpp Code:
+```cpp
+else
+    mp[a[i]] = 1;
+```
+
+BLOCK6: 
+```python
+ans=[]
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> ans;
+```
+
+BLOCK7: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK8: 
+```python
+ans.append(mp[a[i]])
+mp[a[i]]-=1
+```
+Corresponding Cpp Code:
+```cpp
+ans.push_back(mp[a[i]]);
+mp[a[i]]--;
+```
+
+BLOCK9: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+std::vector<int> frequency(int n, std::vector<int> a) { // --- py stmt 1
+    std::unordered_map<int, int> mp; // --- py stmt 2
+    for (int i = 0; i < n; i++) { // --- py stmt 3
+        if (mp.find(a[i]) != mp.end()) { // --- py stmt 4
+            mp[a[i]]++; // --- py stmt 5
+        } else { // --- py stmt 6
+            mp[a[i]] = 1; // --- py stmt 7
+        }
+    }
+    std::vector<int> ans; // --- py stmt 8
+    for (int i = 0; i < n; i++) { // --- py stmt 9
+        ans.push_back(mp[a[i]]); // --- py stmt 10
+        mp[a[i]]--; // --- py stmt 11
+    }
+    return ans; // --- py stmt 12
+}
+```
+"
+"def timeTravel( n, arr):
+    ans=0
+    for i in range(1,n):
+        if (arr[i]>arr[i-1]):
+            ans+=1
+        elif (arr[i]<arr[i-1]):
+            ans+=2
+    return ans","int timeTravel(int n, std::vector<int>& arr) {
+    int ans = 0;
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > arr[i - 1]) {
+            ans += 1;
+        } else if (arr[i] < arr[i - 1]) {
+            ans += 2;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def timeTravel( n, arr):
+```
+Corresponding Cpp Code:
+```cpp
+int timeTravel(int n, std::vector<int>& arr) {
+```
+
+BLOCK1: 
+```python
+ans=0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(1,n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 1; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+if (arr[i]>arr[i-1]):
+```
+Corresponding Cpp Code:
+```cpp
+if (arr[i] > arr[i - 1]) {
+```
+
+BLOCK4: 
+```python
+ans+=1
+```
+Corresponding Cpp Code:
+```cpp
+ans += 1;
+```
+
+BLOCK5: 
+```python
+elif (arr[i]<arr[i-1]):
+```
+Corresponding Cpp Code:
+```cpp
+} else if (arr[i] < arr[i - 1]) {
+```
+
+BLOCK6: 
+```python
+ans+=2
+```
+Corresponding Cpp Code:
+```cpp
+ans += 2;
+```
+
+BLOCK7: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int timeTravel(int n, std::vector<int>& arr) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (int i = 1; i < n; i++) { // --- py stmt 3
+        if (arr[i] > arr[i - 1]) { // --- py stmt 4
+            ans += 1; // --- py stmt 5
+        } else if (arr[i] < arr[i - 1]) { // --- py stmt 6
+            ans += 2; // --- py stmt 7
+        }
+    }
+    return ans; // --- py stmt 8
+}
+```
+"
+"def trafficLights( n: int, q: int, queries: List[List[int]]) -> str:
+    sweap = [0] * (n + 1)
+    for l, r in queries:
+        sweap[l - 1] += 1
+        sweap[r] -= 1
+    curr = 0
+    ans = """"
+    for i in range(n):
+        curr = (curr + sweap[i]) % 3
+        if curr == 0:
+            ans += 'R'
+        elif curr == 1:
+            ans += 'Y'
+        else:
+            ans += 'G'
+    return ans","std::string trafficLights(int n, int q, std::vector<std::vector<int>>& queries) {
+    std::vector<int> sweep(n + 1, 0);
+    for (auto& query : queries) {
+        sweep[query[0] - 1] += 1;
+        sweep[query[1]] -= 1;
+    }
+    int curr = 0;
+    std::string ans = """";
+    for (int i = 0; i < n; i++) {
+        curr = (curr + sweep[i]) % 3;
+        if (curr == 0) {
+            ans += 'R';
+        } else if (curr == 1) {
+            ans += 'Y';
+        } else {
+            ans += 'G';
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def trafficLights( n: int, q: int, queries: List[List[int]]) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string trafficLights(int n, int q, std::vector<std::vector<int>>& queries) {
+```
+
+BLOCK1: 
+```python
+sweap = [0] * (n + 1)
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> sweep(n + 1, 0);
+```
+
+BLOCK2: 
+```python
+for l, r in queries:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto& query : queries) {
+```
+
+BLOCK3: 
+```python
+sweap[l - 1] += 1
+sweap[r] -= 1
+```
+Corresponding Cpp Code:
+```cpp
+sweep[query[0] - 1] += 1;
+sweep[query[1]] -= 1;
+```
+
+BLOCK4: 
+```python
+curr = 0
+ans = """"
+```
+Corresponding Cpp Code:
+```cpp
+int curr = 0;
+std::string ans = """";
+```
+
+BLOCK5: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK6: 
+```python
+curr = (curr + sweap[i]) % 3
+```
+Corresponding Cpp Code:
+```cpp
+curr = (curr + sweep[i]) % 3;
+```
+
+BLOCK7: 
+```python
+if curr == 0:
+```
+Corresponding Cpp Code:
+```cpp
+if (curr == 0) {
+```
+
+BLOCK8: 
+```python
+ans += 'R'
+```
+Corresponding Cpp Code:
+```cpp
+ans += 'R';
+```
+
+BLOCK9: 
+```python
+elif curr == 1:
+```
+Corresponding Cpp Code:
+```cpp
+else if (curr == 1) {
+```
+
+BLOCK10: 
+```python
+ans += 'Y'
+```
+Corresponding Cpp Code:
+```cpp
+ans += 'Y';
+```
+
+BLOCK11: 
+```python
+else:
+ans += 'G'
+```
+Corresponding Cpp Code:
+```cpp
+else {
+ans += 'G';
+```
+
+BLOCK12: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+std::string trafficLights(int n, int q, std::vector<std::vector<int>>& queries) { // --- py stmt 1
+    std::vector<int> sweep(n + 1, 0); // --- py stmt 2
+    for (auto& query : queries) { // --- py stmt 3
+        sweep[query[0] - 1] += 1; // --- py stmt 4
+        sweep[query[1]] -= 1; // --- py stmt 5
+    }
+    int curr = 0; // --- py stmt 6
+    std::string ans = """"; // --- py stmt 7
+    for (int i = 0; i < n; i++) { // --- py stmt 8
+        curr = (curr + sweep[i]) % 3; // --- py stmt 9
+        if (curr == 0) { // --- py stmt 10
+            ans += 'R'; // --- py stmt 11
+        } else if (curr == 1) { // --- py stmt 12
+            ans += 'Y'; // --- py stmt 13
+        } else { // --- py stmt 14
+            ans += 'G'; // --- py stmt 15
+        }
+    }
+    return ans; // --- py stmt 16
+}
+```
+"
+"def validStrings( n : int, k : int, arr : List[str]) -> int:
+    ans=0
+    for el in arr:
+        C=0
+        for e in el:
+            if e in ""aeiou"":
+                C+=1
+        if C==k:
+            ans+=1
+    return ans","int validStrings(int n, int k, vector<string>& arr) {
+    int ans = 0;
+    for (auto el : arr) {
+        int C = 0;
+        for (auto e : el) {
+            if (e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u') {
+                C++;
+            }
+        }
+        if (C == k) {
+            ans++;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def validStrings( n : int, k : int, arr : List[str]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int validStrings(int n, int k, vector<string>& arr) {
+```
+
+BLOCK1: 
+```python
+ans=0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for el in arr:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto el : arr) {
+```
+
+BLOCK3: 
+```python
+C=0
+```
+Corresponding Cpp Code:
+```cpp
+int C = 0;
+```
+
+BLOCK4: 
+```python
+for e in el:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto e : el) {
+```
+
+BLOCK5: 
+```python
+if e in ""aeiou"":
+```
+Corresponding Cpp Code:
+```cpp
+if (e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u') {
+```
+
+BLOCK6: 
+```python
+C+=1
+```
+Corresponding Cpp Code:
+```cpp
+C++;
+```
+
+BLOCK7: 
+```python
+if C==k:
+```
+Corresponding Cpp Code:
+```cpp
+if (C == k) {
+```
+
+BLOCK8: 
+```python
+ans+=1
+```
+Corresponding Cpp Code:
+```cpp
+ans++;
+```
+
+BLOCK9: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int validStrings(int n, int k, vector<string>& arr) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (auto el : arr) { // --- py stmt 3
+        int C = 0; // --- py stmt 4
+        for (auto e : el) { // --- py stmt 5
+            if (e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u') { // --- py stmt 6
+                C++; // --- py stmt 7
+            }
+        }
+        if (C == k) { // --- py stmt 8
+            ans++; // --- py stmt 9
+        }
+    }
+    return ans; // --- py stmt 10
+}
+```
+"
+"def smallestString( n : int, s : str) -> str:
+    
+    if n == 1:
+        return ""-1""
+    answer = list(s)
+    
+    for i in range(n // 2):
+        
+        if s[i] != 'a':
+            answer[i] = 'a'
+            return ''.join(answer)
+    
+    answer[-1] = 'b'
+    return ''.join(answer)","std::string smallestString(int n, std::string s) {
+
+    if (n == 1)
+        return ""-1"";
+    
+    std::string answer = s;
+
+    for (int i = 0; i < n / 2; i++) {
+
+        if (s[i] != 'a') {
+            answer[i] = 'a';
+            return answer;
+        }
+    }
+
+    answer[n - 1] = 'b';
+    return answer;
+}","BLOCK0: 
+```python
+def smallestString( n : int, s : str) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string smallestString(int n, std::string s) {
+```
+
+BLOCK1: 
+```python
+if n == 1:
+```
+Corresponding Cpp Code:
+```cpp
+if (n == 1)
+```
+
+BLOCK2: 
+```python
+return ""-1""
+```
+Corresponding Cpp Code:
+```cpp
+return ""-1"";
+```
+
+BLOCK3: 
+```python
+answer = list(s)
+```
+Corresponding Cpp Code:
+```cpp
+std::string answer = s;
+```
+
+BLOCK4: 
+```python
+for i in range(n // 2):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n / 2; i++) {
+```
+
+BLOCK5: 
+```python
+if s[i] != 'a':
+```
+Corresponding Cpp Code:
+```cpp
+if (s[i] != 'a') {
+```
+
+BLOCK6: 
+```python
+answer[i] = 'a'
+return ''.join(answer)
+```
+Corresponding Cpp Code:
+```cpp
+answer[i] = 'a';
+return answer;
+```
+
+BLOCK7: 
+```python
+answer[-1] = 'b'
+return ''.join(answer)
+```
+Corresponding Cpp Code:
+```cpp
+answer[n - 1] = 'b';
+return answer;
+```
+","```cpp
+std::string smallestString(int n, std::string s) { // --- py stmt 1
+    if (n == 1) // --- py stmt 2
+        return ""-1""; // --- py stmt 3
+    std::string answer = s; // --- py stmt 4
+    for (int i = 0; i < n / 2; i++) { // --- py stmt 5
+        if (s[i] != 'a') { // --- py stmt 6
+            answer[i] = 'a'; // --- py stmt 7
+            return answer; // --- py stmt 8
+        }
+    }
+    answer[n - 1] = 'b'; // --- py stmt 9
+    return answer; // --- py stmt 10
+}
+```
+"
+"def AreEqual( a: str, b: str) -> bool:
+    for i in range(len(a) - 1):
+        if (a[i] == b[i] and a[i] == '0' and a[i + 1] == b[i + 1]
+                and a[i + 1] == '1'):
+            return True
+    return False","bool AreEqual(std::string a, std::string b) {
+    for (int i = 0; i < a.length() - 1; i++) {
+        if ((a[i] == b[i] && a[i] == '0' && a[i + 1] == b[i + 1] && a[i + 1] == '1')) {
+            return true;
+        }
+    }
+    return false;
+}","BLOCK0: 
+```python
+def AreEqual( a: str, b: str) -> bool:
+```
+Corresponding Cpp Code:
+```cpp
+bool AreEqual(std::string a, std::string b) {
+```
+
+BLOCK1: 
+```python
+for i in range(len(a) - 1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < a.length() - 1; i++) {
+```
+
+BLOCK2: 
+```python
+if (a[i] == b[i] and a[i] == '0' and a[i + 1] == b[i + 1] and a[i + 1] == '1'):
+```
+Corresponding Cpp Code:
+```cpp
+if ((a[i] == b[i] && a[i] == '0' && a[i + 1] == b[i + 1] && a[i + 1] == '1')) {
+```
+
+BLOCK3: 
+```python
+return True
+```
+Corresponding Cpp Code:
+```cpp
+return true;
+```
+
+BLOCK4: 
+```python
+return False
+```
+Corresponding Cpp Code:
+```cpp
+return false;
+```
+","```cpp
+bool AreEqual(std::string a, std::string b) { // --- py stmt 1
+    for (int i = 0; i < a.length() - 1; i++) { // --- py stmt 2
+        if ((a[i] == b[i] && a[i] == '0' && a[i + 1] == b[i + 1] && a[i + 1] == '1')) { // --- py stmt 3
+            return true; // --- py stmt 5
+        }
+    }
+    return false; // --- py stmt 6
+}
+```
+"
+"def maxPoints( n: int, arr: List[List[int]]) -> int:
+    dp = [0] * (200000)
+    for i in range(n - 1, -1, -1):
+        dp[i] = max(arr[i][0] + dp[arr[i][1] + i + 1], dp[i + 1])
+    return dp[0]","int maxPoints(int n, vector<vector<int>>& arr) {
+    vector<int> dp(200000, 0);
+    for (int i = n - 1; i >= 0; --i) {
+        dp[i] = max(arr[i][0] + dp[arr[i][1] + i + 1], dp[i + 1]);
+    }
+    return dp[0];
+}","BLOCK0: 
+```python
+def maxPoints( n: int, arr: List[List[int]]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int maxPoints(int n, vector<vector<int>>& arr) {
+```
+
+BLOCK1: 
+```python
+dp = [0] * (200000)
+```
+Corresponding Cpp Code:
+```cpp
+vector<int> dp(200000, 0);
+```
+
+BLOCK2: 
+```python
+for i in range(n - 1, -1, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = n - 1; i >= 0; --i) {
+```
+
+BLOCK3: 
+```python
+dp[i] = max(arr[i][0] + dp[arr[i][1] + i + 1], dp[i + 1])
+```
+Corresponding Cpp Code:
+```cpp
+dp[i] = max(arr[i][0] + dp[arr[i][1] + i + 1], dp[i + 1]);
+```
+
+BLOCK4: 
+```python
+return dp[0]
+```
+Corresponding Cpp Code:
+```cpp
+return dp[0];
+```
+","```cpp
+int maxPoints(int n, vector<vector<int>>& arr) { // --- py stmt 1
+    vector<int> dp(200000, 0); // --- py stmt 2
+    for (int i = n - 1; i >= 0; --i) { // --- py stmt 3
+        dp[i] = max(arr[i][0] + dp[arr[i][1] + i + 1], dp[i + 1]); // --- py stmt 4
+    }
+    return dp[0]; // --- py stmt 5
+}
+```
+"
+"def matrixConundrum( n: int, m: int, mat: List[str]) -> bool:
+    check = ['p', 'l', 'a', 'y']
+    idx = 0
+    for j in range(m):
+        for i in range(n):
+            if mat[i][j] == check[idx]:
+                idx += 1
+                if idx == 4:
+                    return True
+                break
+    return False","bool matrixConundrum(int n, int m, std::vector<std::string> mat) {
+    std::vector<char> check = {'p', 'l', 'a', 'y'};
+    int idx = 0;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            if (mat[i][j] == check[idx]) {
+                idx++;
+                if (idx == 4) {
+                    return true;
+                }
+                break;
+            }
+        }
+    }
+    return false;
+}","BLOCK0: 
+```python
+def matrixConundrum( n: int, m: int, mat: List[str]) -> bool:
+```
+Corresponding Cpp Code:
+```cpp
+bool matrixConundrum(int n, int m, std::vector<std::string> mat) {
+```
+
+BLOCK1: 
+```python
+check = ['p', 'l', 'a', 'y']
+idx = 0
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<char> check = {'p', 'l', 'a', 'y'};
+int idx = 0;
+```
+
+BLOCK2: 
+```python
+for j in range(m):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < m; j++) {
+```
+
+BLOCK3: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK4: 
+```python
+if mat[i][j] == check[idx]:
+```
+Corresponding Cpp Code:
+```cpp
+if (mat[i][j] == check[idx]) {
+```
+
+BLOCK5: 
+```python
+idx += 1
+```
+Corresponding Cpp Code:
+```cpp
+idx++;
+```
+
+BLOCK6: 
+```python
+if idx == 4:
+```
+Corresponding Cpp Code:
+```cpp
+if (idx == 4) {
+```
+
+BLOCK7: 
+```python
+return True
+```
+Corresponding Cpp Code:
+```cpp
+return true;
+```
+
+BLOCK8: 
+```python
+return False
+```
+Corresponding Cpp Code:
+```cpp
+return false;
+```
+","```cpp
+bool matrixConundrum(int n, int m, std::vector<std::string> mat) { // --- py stmt 1
+    std::vector<char> check = {'p', 'l', 'a', 'y'}; // --- py stmt 2
+    int idx = 0; // --- py stmt 3
+    for (int j = 0; j < m; j++) { // --- py stmt 4
+        for (int i = 0; i < n; i++) { // --- py stmt 5
+            if (mat[i][j] == check[idx]) { // --- py stmt 6
+                idx++; // --- py stmt 7
+                if (idx == 4) { // --- py stmt 8
+                    return true; // --- py stmt 9
+                }
+                break; // --- py stmt 10
+            }
+        }
+    }
+    return false; // --- py stmt 11
+}
+```
+"
+"def countOperations( s: str) -> int:
+    mod = 10**9 + 7
+    ans = 0
+    count_b = 0
+    for i in range(len(s) - 1, -1, -1):
+        if s[i] == 'b':
+            count_b = (count_b + 1) % mod
+        else:
+            ans = (ans + count_b) % mod
+            count_b = (count_b + count_b) % mod
+    return ans","long long countOperations(std::string s) {
+    long long mod = 1000000007;
+    long long ans = 0;
+    long long count_b = 0;
+    for (int i = s.size() - 1; i >= 0; --i) {
+        if (s[i] == 'b') {
+            count_b = (count_b + 1) % mod;
+        } else {
+            ans = (ans + count_b) % mod;
+            count_b = (count_b + count_b) % mod;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def countOperations( s: str) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+long long countOperations(std::string s) {
+```
+
+BLOCK1: 
+```python
+mod = 10**9 + 7
+ans = 0
+count_b = 0
+```
+Corresponding Cpp Code:
+```cpp
+long long mod = 1000000007;
+long long ans = 0;
+long long count_b = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(len(s) - 1, -1, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = s.size() - 1; i >= 0; --i) {
+```
+
+BLOCK3: 
+```python
+if s[i] == 'b':
+```
+Corresponding Cpp Code:
+```cpp
+if (s[i] == 'b') {
+```
+
+BLOCK4: 
+```python
+count_b = (count_b + 1) % mod
+```
+Corresponding Cpp Code:
+```cpp
+count_b = (count_b + 1) % mod;
+```
+
+BLOCK5: 
+```python
+else:
+    ans = (ans + count_b) % mod
+    count_b = (count_b + count_b) % mod
+```
+Corresponding Cpp Code:
+```cpp
+else {
+    ans = (ans + count_b) % mod;
+    count_b = (count_b + count_b) % mod;
+}
+```
+
+BLOCK6: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+long long countOperations(std::string s) { // --- py stmt 1
+    long long mod = 1000000007; // --- py stmt 2
+    long long ans = 0; // --- py stmt 3
+    long long count_b = 0; // --- py stmt 4
+    for (int i = s.size() - 1; i >= 0; --i) { // --- py stmt 5
+        if (s[i] == 'b') { // --- py stmt 6
+            count_b = (count_b + 1) % mod; // --- py stmt 7
+        } else { // --- py stmt 8
+            ans = (ans + count_b) % mod; // --- py stmt 9
+            count_b = (count_b + count_b) % mod; // --- py stmt 10
+        }
+    }
+    return ans; // --- py stmt 11
+}
+```
+"
+"def maximumStrongIndices( n: int, x: int, y: int, a: List[int],
+                         b: List[int]) -> int:
+    j = 0
+    ans = 0
+    for i in range(n):
+        while j < n and b[j] < a[i] - x:
+            j += 1
+        if j < n and b[j] <= a[i] + y:
+            ans += 1
+            j += 1
+    return ans","int maximumStrongIndices(int n, int x, int y, vector<int>& a, vector<int>& b) {
+    int j = 0;
+    int ans = 0;
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    for (int i = 0; i < n; i++) {
+        while (j < n && b[j] < a[i] - x)
+            j += 1;
+        if (j < n && b[j] <= a[i] + y) {
+            ans += 1;
+            j += 1;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def maximumStrongIndices( n: int, x: int, y: int, a: List[int], b: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int maximumStrongIndices(int n, int x, int y, vector<int>& a, vector<int>& b) {
+```
+
+BLOCK1: 
+```python
+j = 0
+ans = 0
+```
+Corresponding Cpp Code:
+```cpp
+int j = 0;
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+while j < n and b[j] < a[i] - x:
+```
+Corresponding Cpp Code:
+```cpp
+while (j < n && b[j] < a[i] - x)
+```
+
+BLOCK4: 
+```python
+j += 1
+```
+Corresponding Cpp Code:
+```cpp
+j += 1;
+```
+
+BLOCK5: 
+```python
+if j < n and b[j] <= a[i] + y:
+```
+Corresponding Cpp Code:
+```cpp
+if (j < n && b[j] <= a[i] + y) {
+```
+
+BLOCK6: 
+```python
+ans += 1
+j += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += 1;
+j += 1;
+```
+
+BLOCK7: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int maximumStrongIndices(int n, int x, int y, vector<int>& a, vector<int>& b) { // --- py stmt 1
+    int j = 0; // --- py stmt 3
+    int ans = 0; // --- py stmt 4
+    sort(a.begin(), a.end()); // --- py stmt 5
+    sort(b.begin(), b.end()); // --- py stmt 5
+    for (int i = 0; i < n; i++) { // --- py stmt 5
+        while (j < n && b[j] < a[i] - x) { // --- py stmt 6
+            j += 1; // --- py stmt 7
+        }
+        if (j < n && b[j] <= a[i] + y) { // --- py stmt 8
+            ans += 1; // --- py stmt 9
+            j += 1; // --- py stmt 10
+        }
+    }
+    return ans; // --- py stmt 11
+}
+```
+
+## Python_code
+def maximumStrongIndices( n: int, x: int, y: int, a: List[int], # --- py stmt 1
+                         b: List[int]) -> int: # --- py stmt 2
+    j = 0 # --- py stmt 3
+    ans = 0 # --- py stmt 4
+    for i in range(n): # --- py stmt 5
+        while j < n and b[j] < a[i] - x: # --- py stmt 6
+            j += 1 # --- py stmt 7
+        if j < n and b[j] <= a[i] + y: # --- py stmt 8
+            ans += 1 # --- py stmt 9
+            j += 1 # --- py stmt 10
+    return ans # --- py stmt 11
+
+## Cpp_code
+int maximumStrongIndices(int n, int x, int y, vector<int>& a, vector<int>& b) {
+    int j = 0;
+    int ans = 0;
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    for (int i = 0; i < n; i++) {
+        while (j < n && b[j] < a[i] - x)
+            j += 1;
+        if (j < n && b[j] <= a[i] + y) {
+            ans += 1;
+            j += 1;
+        }
+    }
+    return ans;
+}
+```
+"
+"def geeklandElections( n: int, k: int, s: str) -> bool:
+    ans = s.count(""1"") + min(k, s.count(""0""))
+    return ans > n - ans","bool geeklandElections(int n, int k, string s) {
+    int ones = count(s.begin(), s.end(), '1');
+    int zeros = count(s.begin(), s.end(), '0');
+    int ans = ones + min(k, zeros);
+    return ans > n - ans;
+}","BLOCK0: 
+```python
+def geeklandElections( n: int, k: int, s: str) -> bool:
+```
+Corresponding Cpp Code:
+```cpp
+bool geeklandElections(int n, int k, string s) {
+```
+
+BLOCK1: 
+```python
+ans = s.count(""1"") + min(k, s.count(""0""))
+return ans > n - ans
+```
+Corresponding Cpp Code:
+```cpp
+int ones = count(s.begin(), s.end(), '1');
+int zeros = count(s.begin(), s.end(), '0');
+int ans = ones + min(k, zeros);
+return ans > n - ans;
+```
+","```cpp
+bool geeklandElections(int n, int k, string s) { // --- py stmt 1
+    int ones = 0;
+    int zeros = 0;
+    for(int i = 0; i < s.length(); i++) {
+        if(s[i] == '1') ones++; // --- py stmt 2
+        else if(s[i] == '0') zeros++;
+    }
+    int ans = ones + min(k, zeros); // --- py stmt 2
+    return ans > n - ans; // --- py stmt 3
+}
+```
+"
+"def totalCount( n : int, s : str) -> int:
+    mod=10**9+7
+    ans=0
+    for i in range(n):
+        if s[i]==s[0]:
+            ans+=(n-i)
+            ans%=mod
+    return ans","int totalCount(int n, string s) {
+    long long mod=1000000007;
+    long long ans=0;
+    for(int i=0;i<n;i++){
+        if(s[i]==s[0]){
+            ans+=(n-i);
+            ans%=mod;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def totalCount( n : int, s : str) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int totalCount(int n, string s) {
+```
+
+BLOCK1: 
+```python
+mod=10**9+7
+ans=0
+```
+Corresponding Cpp Code:
+```cpp
+long long mod=1000000007;
+long long ans=0;
+```
+
+BLOCK2: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for(int i=0;i<n;i++){
+```
+
+BLOCK3: 
+```python
+if s[i]==s[0]:
+```
+Corresponding Cpp Code:
+```cpp
+if(s[i]==s[0]){
+```
+
+BLOCK4: 
+```python
+ans+=(n-i)
+ans%=mod
+```
+Corresponding Cpp Code:
+```cpp
+ans+=(n-i);
+ans%=mod;
+```
+
+BLOCK5: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int totalCount(int n, string s) { // --- py stmt 1
+    long long mod = 1000000007; // --- py stmt 2
+    long long ans = 0; // --- py stmt 3
+    for(int i = 0; i < n; i++) { // --- py stmt 4
+        if(s[i] == s[0]) { // --- py stmt 5
+            ans += (n - i); // --- py stmt 6
+            ans %= mod; // --- py stmt 7
+        }
+    }
+    return ans; // --- py stmt 8
+}
+```
+"
+"def geekTasks( n : int, m : int, q : int, tasks : List[List[int]]) -> int:
+    minA=0
+    minB=0
+    for i in range(q):
+        a,b=tasks[i][0],tasks[i][1]
+        a+=1
+        b+=1
+        if i==0:
+            minA=a
+            minB=b
+        else:
+            if minA>a:
+                minA=a
+            if minB>b:
+                minB=b
+    total=0
+    maxi=0
+    col=[0]*(n)
+    for i in range(q):
+        col[tasks[i][0]]=max(col[tasks[i][0]],tasks[i][1]+1)
+    for i in range(n-1,-1,-1):
+        maxi=max(maxi,col[i])
+        total+=maxi
+    total-=minA*minB
+    return total","int geekTasks(int n, int m, int q, vector<vector<int>>& tasks) {
+    int minA = 0;
+    int minB = 0;
+    for (int i = 0; i < q; i++) {
+        int a = tasks[i][0], b = tasks[i][1];
+        a += 1;
+        b += 1;
+        if (i == 0) {
+            minA = a;
+            minB = b;
+        } else {
+            if (minA > a) {
+                minA = a;
+            }
+            if (minB > b) {
+                minB = b;
+            }
+        }
+    }
+    int total = 0;
+    int maxi = 0;
+    vector<int> col(n, 0);
+    for (int i = 0; i < q; i++) {
+        col[tasks[i][0]] = max(col[tasks[i][0]], tasks[i][1] + 1);
+    }
+    for (int i = n - 1; i >= 0; i--) {
+        maxi = max(maxi, col[i]);
+        total += maxi;
+    }
+    total -= minA * minB;
+    return total;
+}","BLOCK0: 
+```python
+def geekTasks( n : int, m : int, q : int, tasks : List[List[int]]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int geekTasks(int n, int m, int q, vector<vector<int>>& tasks) {
+```
+
+BLOCK1: 
+```python
+minA=0
+minB=0
+```
+Corresponding Cpp Code:
+```cpp
+int minA = 0;
+int minB = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(q):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < q; i++) {
+```
+
+BLOCK3: 
+```python
+a,b=tasks[i][0],tasks[i][1]
+a+=1
+b+=1
+```
+Corresponding Cpp Code:
+```cpp
+int a = tasks[i][0], b = tasks[i][1];
+a += 1;
+b += 1;
+```
+
+BLOCK4: 
+```python
+if i==0:
+```
+Corresponding Cpp Code:
+```cpp
+if (i == 0) {
+```
+
+BLOCK5: 
+```python
+minA=a
+minB=b
+```
+Corresponding Cpp Code:
+```cpp
+minA = a;
+minB = b;
+```
+
+BLOCK6: 
+```python
+if minA>a:
+```
+Corresponding Cpp Code:
+```cpp
+if (minA > a) {
+```
+
+BLOCK7: 
+```python
+minA=a
+```
+Corresponding Cpp Code:
+```cpp
+minA = a;
+```
+
+BLOCK8: 
+```python
+if minB>b:
+```
+Corresponding Cpp Code:
+```cpp
+if (minB > b) {
+```
+
+BLOCK9: 
+```python
+minB=b
+```
+Corresponding Cpp Code:
+```cpp
+minB = b;
+```
+
+BLOCK10: 
+```python
+total=0
+maxi=0
+col=[0]*(n)
+```
+Corresponding Cpp Code:
+```cpp
+int total = 0;
+int maxi = 0;
+vector<int> col(n, 0);
+```
+
+BLOCK11: 
+```python
+for i in range(q):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < q; i++) {
+```
+
+BLOCK12: 
+```python
+col[tasks[i][0]]=max(col[tasks[i][0]],tasks[i][1]+1)
+```
+Corresponding Cpp Code:
+```cpp
+col[tasks[i][0]] = max(col[tasks[i][0]], tasks[i][1] + 1);
+```
+
+BLOCK13: 
+```python
+for i in range(n-1,-1,-1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = n - 1; i >= 0; i--) {
+```
+
+BLOCK14: 
+```python
+maxi=max(maxi,col[i])
+total+=maxi
+```
+Corresponding Cpp Code:
+```cpp
+maxi = max(maxi, col[i]);
+total += maxi;
+```
+
+BLOCK15: 
+```python
+total-=minA*minB
+return total
+```
+Corresponding Cpp Code:
+```cpp
+total -= minA * minB;
+return total;
+```
+","```cpp
+int geekTasks(int n, int m, int q, vector<vector<int>>& tasks) { // --- py stmt 1
+    int minA = 0; // --- py stmt 2
+    int minB = 0; // --- py stmt 3
+    for (int i = 0; i < q; i++) { // --- py stmt 4
+        int a = tasks[i][0], b = tasks[i][1]; // --- py stmt 5
+        a += 1; // --- py stmt 6
+        b += 1; // --- py stmt 7
+        if (i == 0) { // --- py stmt 8
+            minA = a; // --- py stmt 9
+            minB = b; // --- py stmt 10
+        } else { // --- py stmt 11
+            if (minA > a) { // --- py stmt 12
+                minA = a; // --- py stmt 13
+            }
+            if (minB > b) { // --- py stmt 14
+                minB = b; // --- py stmt 15
+            }
+        }
+    }
+    int total = 0; // --- py stmt 16
+    int maxi = 0; // --- py stmt 17
+    vector<int> col(n, 0); // --- py stmt 18
+    for (int i = 0; i < q; i++) { // --- py stmt 19
+        col[tasks[i][0]] = max(col[tasks[i][0]], tasks[i][1] + 1); // --- py stmt 20
+    }
+    for (int i = n - 1; i >= 0; i--) { // --- py stmt 21
+        maxi = max(maxi, col[i]); // --- py stmt 22
+        total += maxi; // --- py stmt 23
+    }
+    total -= minA * minB; // --- py stmt 24
+    return total; // --- py stmt 25
+}
+```
+"
+"def validPairs( n: int, val: List[int], edges: List[List[int]]) -> int:
+    lift=[[0]*(32) for _ in range(n+1)]
+    dis=[0]*(n+1)
+    dis2=[0]*(n+1)
+    adj=[[] for _ in range(n+1)]
+    for i in edges:
+        adj[i[0]].append((i[1],i[2]))
+        adj[i[1]].append((i[0],i[2]))
+    dis[0]=-(10**15)
+    st=[[1,0,0,0]]
+    while st:
+        top=st.pop()
+        i,par,d,d2=top[0],top[1],top[2],top[3]
+        lift[i][0]=par
+        dis[i]=d
+        dis2[i]=d2
+        for j in range(1,32):
+            lift[i][j]=lift[lift[i][j-1]][j-1]
+        for j in adj[i]:
+            if j[0]==par:
+                continue
+            st.append([j[0],i,d+j[1],d2+1])
+    ans=0
+    for i in range(1,n+1):
+        v=val[i-1]
+        p=i
+        for j in range(31,-1,-1):
+            if v>=dis[p]-dis[lift[p][j]]:
+                v-=dis[p]-dis[lift[p][j]]
+                p=lift[p][j]
+        ans+=dis2[i]-dis2[p]
+    return ans","int validPairs(int n, vector<int>& val, vector<vector<int>>& edges) {
+    vector<vector<int>> lift(n+1, vector<int>(32));
+    vector<int> dis(n+1), dis2(n+1);
+    vector<vector<pair<int, int>>> adj(n+1);
+    for (auto& i : edges) {
+        adj[i[0]].emplace_back(i[1], i[2]);
+        adj[i[1]].emplace_back(i[0], i[2]);
+    }
+    dis[0] = -1e15;
+    vector<array<int, 4>> st = {{1, 0, 0, 0}};
+    while (!st.empty()) {
+        auto top = st.back(); st.pop_back();
+        int i = top[0], par = top[1], d = top[2], d2 = top[3];
+        lift[i][0] = par;
+        dis[i] = d;
+        dis2[i] = d2;
+        for (int j = 1; j < 32; ++j)
+            lift[i][j] = lift[lift[i][j-1]][j-1];
+        for (auto& j : adj[i])
+            if (j.first != par)
+                st.push_back({j.first, i, d + j.second, d2 + 1});
+    }
+    int ans = 0;
+    for (int i = 1; i <= n; ++i) {
+        int v = val[i-1], p = i;
+        for (int j = 31; j >= 0; --j)
+            if (v >= dis[p] - dis[lift[p][j]]) {
+                v -= dis[p] - dis[lift[p][j]];
+                p = lift[p][j];
+            }
+        ans += dis2[i] - dis2[p];
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def validPairs( n: int, val: List[int], edges: List[List[int]]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int validPairs(int n, vector<int>& val, vector<vector<int>>& edges) {
+```
+
+BLOCK1: 
+```python
+lift=[[0]*(32) for _ in range(n+1)]
+```
+Corresponding Cpp Code:
+```cpp
+vector<vector<int>> lift(n+1, vector<int>(32));
+```
+
+BLOCK2: 
+```python
+dis=[0]*(n+1)
+dis2=[0]*(n+1)
+```
+Corresponding Cpp Code:
+```cpp
+vector<int> dis(n+1), dis2(n+1);
+```
+
+BLOCK3: 
+```python
+adj=[[] for _ in range(n+1)]
+```
+Corresponding Cpp Code:
+```cpp
+vector<vector<pair<int, int>>> adj(n+1);
+```
+
+BLOCK4: 
+```python
+for i in edges:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto& i : edges) {
+```
+
+BLOCK5: 
+```python
+adj[i[0]].append((i[1],i[2]))
+adj[i[1]].append((i[0],i[2]))
+```
+Corresponding Cpp Code:
+```cpp
+adj[i[0]].emplace_back(i[1], i[2]);
+adj[i[1]].emplace_back(i[0], i[2]);
+```
+
+BLOCK6: 
+```python
+dis[0]=-(10**15)
+st=[[1,0,0,0]]
+```
+Corresponding Cpp Code:
+```cpp
+dis[0] = -1e15;
+vector<array<int, 4>> st = {{1, 0, 0, 0}};
+```
+
+BLOCK7: 
+```python
+while st:
+```
+Corresponding Cpp Code:
+```cpp
+while (!st.empty()) {
+```
+
+BLOCK8: 
+```python
+top=st.pop()
+i,par,d,d2=top[0],top[1],top[2],top[3]
+```
+Corresponding Cpp Code:
+```cpp
+auto top = st.back(); st.pop_back();
+int i = top[0], par = top[1], d = top[2], d2 = top[3];
+```
+
+BLOCK9: 
+```python
+for j in range(1,32):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 1; j < 32; ++j)
+```
+
+BLOCK10: 
+```python
+lift[i][j]=lift[lift[i][j-1]][j-1]
+```
+Corresponding Cpp Code:
+```cpp
+lift[i][j] = lift[lift[i][j-1]][j-1];
+```
+
+BLOCK11: 
+```python
+for j in adj[i]:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto& j : adj[i])
+```
+
+BLOCK12: 
+```python
+if j[0]==par:
+```
+Corresponding Cpp Code:
+```cpp
+if (j.first != par)
+```
+
+BLOCK13: 
+```python
+st.append([j[0],i,d+j[1],d2+1])
+```
+Corresponding Cpp Code:
+```cpp
+st.push_back({j.first, i, d + j.second, d2 + 1});
+```
+
+BLOCK14: 
+```python
+ans=0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK15: 
+```python
+for i in range(1,n+1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 1; i <= n; ++i) {
+```
+
+BLOCK16: 
+```python
+v=val[i-1]
+p=i
+```
+Corresponding Cpp Code:
+```cpp
+int v = val[i-1], p = i;
+```
+
+BLOCK17: 
+```python
+for j in range(31,-1,-1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 31; j >= 0; --j)
+```
+
+BLOCK18: 
+```python
+if v>=dis[p]-dis[lift[p][j]]:
+```
+Corresponding Cpp Code:
+```cpp
+if (v >= dis[p] - dis[lift[p][j]])
+```
+
+BLOCK19: 
+```python
+v-=dis[p]-dis[lift[p][j]]
+p=lift[p][j]
+```
+Corresponding Cpp Code:
+```cpp
+v -= dis[p] - dis[lift[p][j]];
+p = lift[p][j];
+```
+
+BLOCK20: 
+```python
+ans+=dis2[i]-dis2[p]
+```
+Corresponding Cpp Code:
+```cpp
+ans += dis2[i] - dis2[p];
+```
+
+BLOCK21: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int validPairs(int n, vector<int>& val, vector<vector<int>>& edges) { // --- py stmt 1
+    vector<vector<int>> lift(n+1, vector<int>(32)); // --- py stmt 2
+    vector<int> dis(n+1), dis2(n+1); // --- py stmt 3
+    vector<vector<pair<int, int>>> adj(n+1); // --- py stmt 5
+    for (auto& i : edges) { // --- py stmt 6
+        adj[i[0]].emplace_back(i[1], i[2]); // --- py stmt 7
+        adj[i[1]].emplace_back(i[0], i[2]); // --- py stmt 8
+    }
+    dis[0] = -1e15; // --- py stmt 9
+    vector<array<int, 4>> st = {{1, 0, 0, 0}}; // --- py stmt 10
+    while (!st.empty()) { // --- py stmt 11
+        auto top = st.back(); st.pop_back(); // --- py stmt 12
+        int i = top[0], par = top[1], d = top[2], d2 = top[3]; // --- py stmt 13
+        lift[i][0] = par; // --- py stmt 14
+        dis[i] = d; // --- py stmt 15
+        dis2[i] = d2; // --- py stmt 16
+        for (int j = 1; j < 32; ++j) // --- py stmt 17
+            lift[i][j] = lift[lift[i][j-1]][j-1]; // --- py stmt 18
+        for (auto& j : adj[i]) // --- py stmt 19
+            if (j.first != par) // --- py stmt 20
+                st.push_back({j.first, i, d + j.second, d2 + 1}); // --- py stmt 22
+    }
+    int ans = 0; // --- py stmt 23
+    for (int i = 1; i <= n; ++i) { // --- py stmt 24
+        int v = val[i-1], p = i; // --- py stmt 25
+        for (int j = 31; j >= 0; --j) // --- py stmt 27
+            if (v >= dis[p] - dis[lift[p][j]]) { // --- py stmt 28
+                v -= dis[p] - dis[lift[p][j]]; // --- py stmt 29
+                p = lift[p][j]; // --- py stmt 30
+            }
+        ans += dis2[i] - dis2[p]; // --- py stmt 31
+    }
+    return ans; // --- py stmt 32
+}
+```
+"
+"def countSubmatrices( grid: List[List[int]], k: int) -> int:
+    ans = 0
+    m, n = len(grid), len(grid[0])
+    s = [[0] * (n + 1) for _ in range(m + 1)]
+    for i, row in enumerate(grid):
+        for j, x in enumerate(row):
+            s[i + 1][j + 1] = s[i + 1][j] + s[i][j + 1] - s[i][j] + x
+            if s[i + 1][j + 1] <= k:
+                ans += 1
+    return ans","int countSubmatrices(vector<vector<int>>& grid, int k) {
+    int ans = 0;
+    int m = grid.size(), n = grid[0].size();
+    vector<vector<int>> s(m + 1, vector<int>(n + 1));
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j) {
+            s[i + 1][j + 1] = s[i + 1][j] + s[i][j + 1] - s[i][j] + grid[i][j];
+            if (s[i + 1][j + 1] <= k) {
+                ans += 1;
+            }
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def countSubmatrices( grid: List[List[int]], k: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int countSubmatrices(vector<vector<int>>& grid, int k) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+m, n = len(grid), len(grid[0])
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+int m = grid.size(), n = grid[0].size();
+```
+
+BLOCK2: 
+```python
+s = [[0] * (n + 1) for _ in range(m + 1)]
+```
+Corresponding Cpp Code:
+```cpp
+vector<vector<int>> s(m + 1, vector<int>(n + 1));
+```
+
+BLOCK3: 
+```python
+for i, row in enumerate(grid):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < m; ++i) {
+```
+
+BLOCK4: 
+```python
+for j, x in enumerate(row):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < n; ++j) {
+```
+
+BLOCK5: 
+```python
+s[i + 1][j + 1] = s[i + 1][j] + s[i][j + 1] - s[i][j] + x
+```
+Corresponding Cpp Code:
+```cpp
+s[i + 1][j + 1] = s[i + 1][j] + s[i][j + 1] - s[i][j] + grid[i][j];
+```
+
+BLOCK6: 
+```python
+if s[i + 1][j + 1] <= k:
+```
+Corresponding Cpp Code:
+```cpp
+if (s[i + 1][j + 1] <= k) {
+```
+
+BLOCK7: 
+```python
+ans += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += 1;
+```
+
+BLOCK8: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int countSubmatrices(vector<vector<int>>& grid, int k) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    int m = grid.size(), n = grid[0].size(); // --- py stmt 3
+    vector<vector<int>> s(m + 1, vector<int>(n + 1)); // --- py stmt 4
+    for (int i = 0; i < m; ++i) { // --- py stmt 5
+        for (int j = 0; j < n; ++j) { // --- py stmt 6
+            s[i + 1][j + 1] = s[i + 1][j] + s[i][j + 1] - s[i][j] + grid[i][j]; // --- py stmt 7
+            if (s[i + 1][j + 1] <= k) { // --- py stmt 8
+                ans += 1; // --- py stmt 9
+            }
+        }
+    }
+    return ans; // --- py stmt 10
+}
+```
+"
+"def minimumOperationsToWriteY( grid: List[List[int]]) -> int:
+    cnt1 = [0] * 3
+    cnt2 = [0] * 3
+    n = len(grid)
+    m = n // 2
+    for i, row in enumerate(grid[:m]):
+        cnt1[row[i]] += 1
+        cnt1[row[-1 - i]] += 1
+        for j, x in enumerate(row):
+            if j != i and j != n - 1 - i:
+                cnt2[x] += 1
+    for row in grid[m:]:
+        cnt1[row[m]] += 1
+        for j, x in enumerate(row):
+            if j != m:
+                cnt2[x] += 1
+    max_not_change = 0
+    for i, c1 in enumerate(cnt1):
+        for j, c2 in enumerate(cnt2):
+            if i != j:
+                max_not_change = max(max_not_change, c1 + c2)
+    return n * n - max_not_change","int minimumOperationsToWriteY(vector<vector<int>>& grid) {
+    vector<int> cnt1(3, 0), cnt2(3, 0);
+    int n = grid.size();
+    int m = n / 2;
+    for (int i = 0; i < m; i++) {
+        cnt1[grid[i][i]] += 1;
+        cnt1[grid[i][n - 1 - i]] += 1;
+        for (int j = 0; j < n; j++) {
+            if (j != i && j != n - 1 - i) {
+                cnt2[grid[i][j]] += 1;
+            }
+        }
+    }
+    for (int i = m; i < n; i++) {
+        cnt1[grid[i][m]] += 1;
+        for (int j = 0; j < n; j++) {
+            if (j != m) {
+                cnt2[grid[i][j]] += 1;
+            }
+        }
+    }
+    int max_not_change = 0;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (i != j) {
+                max_not_change = max(max_not_change, cnt1[i] + cnt2[j]);
+            }
+        }
+    }
+    return n * n - max_not_change;
+}","BLOCK0: 
+```python
+def minimumOperationsToWriteY( grid: List[List[int]]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int minimumOperationsToWriteY(vector<vector<int>>& grid) {
+```
+
+BLOCK1: 
+```python
+cnt1 = [0] * 3
+cnt2 = [0] * 3
+n = len(grid)
+m = n // 2
+```
+Corresponding Cpp Code:
+```cpp
+vector<int> cnt1(3, 0), cnt2(3, 0);
+int n = grid.size();
+int m = n / 2;
+```
+
+BLOCK2: 
+```python
+for i, row in enumerate(grid[:m]):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < m; i++) {
+```
+
+BLOCK3: 
+```python
+cnt1[row[i]] += 1
+cnt1[row[-1 - i]] += 1
+```
+Corresponding Cpp Code:
+```cpp
+cnt1[grid[i][i]] += 1;
+cnt1[grid[i][n - 1 - i]] += 1;
+```
+
+BLOCK4: 
+```python
+for j, x in enumerate(row):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < n; j++) {
+```
+
+BLOCK5: 
+```python
+if j != i and j != n - 1 - i:
+```
+Corresponding Cpp Code:
+```cpp
+if (j != i && j != n - 1 - i) {
+```
+
+BLOCK6: 
+```python
+cnt2[x] += 1
+```
+Corresponding Cpp Code:
+```cpp
+cnt2[grid[i][j]] += 1;
+```
+
+BLOCK7: 
+```python
+for row in grid[m:]:
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = m; i < n; i++) {
+```
+
+BLOCK8: 
+```python
+cnt1[row[m]] += 1
+```
+Corresponding Cpp Code:
+```cpp
+cnt1[grid[i][m]] += 1;
+```
+
+BLOCK9: 
+```python
+for j, x in enumerate(row):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < n; j++) {
+```
+
+BLOCK10: 
+```python
+if j != m:
+```
+Corresponding Cpp Code:
+```cpp
+if (j != m) {
+```
+
+BLOCK11: 
+```python
+cnt2[x] += 1
+```
+Corresponding Cpp Code:
+```cpp
+cnt2[grid[i][j]] += 1;
+```
+
+BLOCK12: 
+```python
+max_not_change = 0
+```
+Corresponding Cpp Code:
+```cpp
+int max_not_change = 0;
+```
+
+BLOCK13: 
+```python
+for i, c1 in enumerate(cnt1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < 3; i++) {
+```
+
+BLOCK14: 
+```python
+for j, c2 in enumerate(cnt2):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < 3; j++) {
+```
+
+BLOCK15: 
+```python
+if i != j:
+```
+Corresponding Cpp Code:
+```cpp
+if (i != j) {
+```
+
+BLOCK16: 
+```python
+max_not_change = max(max_not_change, c1 + c2)
+```
+Corresponding Cpp Code:
+```cpp
+max_not_change = max(max_not_change, cnt1[i] + cnt2[j]);
+```
+
+BLOCK17: 
+```python
+return n * n - max_not_change
+```
+Corresponding Cpp Code:
+```cpp
+return n * n - max_not_change;
+```
+","```cpp
+int minimumOperationsToWriteY(vector<vector<int>>& grid) { // --- py stmt 1
+    vector<int> cnt1(3, 0), cnt2(3, 0); // --- py stmt 2
+    int n = grid.size(); // --- py stmt 4
+    int m = n / 2; // --- py stmt 5
+    for (int i = 0; i < m; i++) { // --- py stmt 6
+        cnt1[grid[i][i]] += 1; // --- py stmt 7
+        cnt1[grid[i][n - 1 - i]] += 1; // --- py stmt 8
+        for (int j = 0; j < n; j++) { // --- py stmt 9
+            if (j != i && j != n - 1 - i) { // --- py stmt 10
+                cnt2[grid[i][j]] += 1; // --- py stmt 11
+            }
+        }
+    }
+    for (int i = m; i < n; i++) { // --- py stmt 12
+        cnt1[grid[i][m]] += 1; // --- py stmt 13
+        for (int j = 0; j < n; j++) { // --- py stmt 14
+            if (j != m) { // --- py stmt 15
+                cnt2[grid[i][j]] += 1; // --- py stmt 16
+            }
+        }
+    }
+    int max_not_change = 0; // --- py stmt 17
+    for (int i = 0; i < 3; i++) { // --- py stmt 18
+        for (int j = 0; j < 3; j++) { // --- py stmt 19
+            if (i != j) { // --- py stmt 20
+                max_not_change = max(max_not_change, cnt1[i] + cnt2[j]); // --- py stmt 21
+            }
+        }
+    }
+    return n * n - max_not_change; // --- py stmt 22
+}
+```
+"
+"def getSmallestString2( s: str, k: int) -> str:
+    s = list(s)
+    for i, c in enumerate(map(ord, s)):
+        dis = min(c - ord('a'), ord('z') - c + 1)
+        if dis > k:
+            s[i] = chr(c - k)
+            break
+        s[i] = 'a'
+        k -= dis
+    return ''.join(s)","std::string getSmallestString2(std::string s, int k) {
+    for (int i = 0; i < s.size(); ++i) {
+        int dis = std::min(s[i] - 'a', 'z' - s[i] + 1);
+        if (dis > k) {
+            s[i] = char(s[i] - k);
+            break;
+        }
+        s[i] = 'a';
+        k -= dis;
+    }
+    return s;
+}","BLOCK0: 
+```python
+def getSmallestString2( s: str, k: int) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string getSmallestString2(std::string s, int k) {
+```
+
+BLOCK1: 
+```python
+s = list(s)
+```
+Corresponding Cpp Code:
+```cpp
+// No direct equivalent in C++, but the string is passed by value and can be manipulated in the function.
+```
+
+BLOCK2: 
+```python
+for i, c in enumerate(map(ord, s)):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < s.size(); ++i) {
+```
+
+BLOCK3: 
+```python
+dis = min(c - ord('a'), ord('z') - c + 1)
+```
+Corresponding Cpp Code:
+```cpp
+int dis = std::min(s[i] - 'a', 'z' - s[i] + 1);
+```
+
+BLOCK4: 
+```python
+if dis > k:
+```
+Corresponding Cpp Code:
+```cpp
+if (dis > k) {
+```
+
+BLOCK5: 
+```python
+s[i] = chr(c - k)
+```
+Corresponding Cpp Code:
+```cpp
+s[i] = char(s[i] - k);
+```
+
+BLOCK6: 
+```python
+s[i] = 'a'
+k -= dis
+```
+Corresponding Cpp Code:
+```cpp
+s[i] = 'a';
+k -= dis;
+```
+
+BLOCK7: 
+```python
+return ''.join(s)
+```
+Corresponding Cpp Code:
+```cpp
+return s;
+```
+","```cpp
+std::string getSmallestString2(std::string s, int k) { // --- py stmt 1
+    s = list(s) // --- py stmt 2
+    for (int i = 0, c in enumerate(map(ord, s)): // --- py stmt 3
+        int dis = min(c - ord('a'), ord('z') - c + 1) // --- py stmt 4
+        if (dis > k) { // --- py stmt 5
+            s[i] = chr(c - k) // --- py stmt 6
+            break // --- py stmt 7
+        }
+        s[i] = 'a' // --- py stmt 8
+        k -= dis // --- py stmt 9
+    return ''.join(s) // --- py stmt 10
+}
+```
+"
+"def minimumArea( grid: List[List[int]]) -> int:
+    left, right = len(grid[0]), 0
+    top, bottom = len(grid), 0
+    for i, row in enumerate(grid):
+        for j, x in enumerate(row):
+            if x:
+                left = min(left, j)
+                right = max(right, j)
+                top = min(top, i)
+                bottom = i
+    return (right - left + 1) * (bottom - top + 1)","int minimumArea(vector<vector<int>>& grid) {
+    int left = grid[0].size(), right = 0;
+    int top = grid.size(), bottom = 0;
+    for (int i = 0; i < grid.size(); i++) {
+        for (int j = 0; j < grid[0].size(); j++) {
+            if (grid[i][j]) {
+                left = min(left, j);
+                right = max(right, j);
+                top = min(top, i);
+                bottom = max(bottom, i);
+            }
+        }
+    }
+    return (right - left + 1) * (bottom - top + 1);
+}","BLOCK0: 
+```python
+def minimumArea( grid: List[List[int]]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int minimumArea(vector<vector<int>>& grid) {
+```
+
+BLOCK1: 
+```python
+left, right = len(grid[0]), 0
+top, bottom = len(grid), 0
+```
+Corresponding Cpp Code:
+```cpp
+int left = grid[0].size(), right = 0;
+int top = grid.size(), bottom = 0;
+```
+
+BLOCK2: 
+```python
+for i, row in enumerate(grid):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < grid.size(); i++) {
+```
+
+BLOCK3: 
+```python
+for j, x in enumerate(row):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < grid[0].size(); j++) {
+```
+
+BLOCK4: 
+```python
+if x:
+```
+Corresponding Cpp Code:
+```cpp
+if (grid[i][j]) {
+```
+
+BLOCK5: 
+```python
+left = min(left, j)
+right = max(right, j)
+top = min(top, i)
+bottom = max(bottom, i)
+```
+Corresponding Cpp Code:
+```cpp
+left = min(left, j);
+right = max(right, j);
+top = min(top, i);
+bottom = max(bottom, i);
+```
+
+BLOCK6: 
+```python
+return (right - left + 1) * (bottom - top + 1)
+```
+Corresponding Cpp Code:
+```cpp
+return (right - left + 1) * (bottom - top + 1);
+```
+","```cpp
+int minimumArea(vector<vector<int>>& grid) { // --- py stmt 1
+    int left = grid[0].size(), right = 0; // --- py stmt 2
+    int top = grid.size(), bottom = 0; // --- py stmt 3
+    for (int i = 0; i < grid.size(); i++) { // --- py stmt 4
+        for (int j = 0; j < grid[0].size(); j++) { // --- py stmt 5
+            if (grid[i][j]) { // --- py stmt 6
+                left = min(left, j); // --- py stmt 7
+                right = max(right, j); // --- py stmt 8
+                top = min(top, i); // --- py stmt 9
+                bottom = max(bottom, i); // --- py stmt 10
+            }
+        }
+    }
+    return (right - left + 1) * (bottom - top + 1); // --- py stmt 11
+}
+```
+"
+"def triangleType( nums: List[int]) -> str:
+    nums.sort()
+    x, y, z = nums
+    if x + y <= z:  
+        return ""none""
+    if x == z:  
+        return ""equilateral""
+    if x == y or y == z:
+        return ""isosceles""
+    return ""scalene""","std::string triangleType(std::vector<int>& nums) {
+    std::sort(nums.begin(), nums.end());
+    int x = nums[0];
+    int y = nums[1];
+    int z = nums[2];
+
+    if (x + y <= z)  
+        return ""none"";
+    if (x == z)  
+        return ""equilateral"";
+    if (x == y || y == z)
+        return ""isosceles"";
+    return ""scalene"";
+}","BLOCK0: 
+```python
+def triangleType( nums: List[int]) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string triangleType(std::vector<int>& nums) {
+```
+
+BLOCK1: 
+```python
+nums.sort()
+x, y, z = nums
+```
+Corresponding Cpp Code:
+```cpp
+std::sort(nums.begin(), nums.end());
+int x = nums[0];
+int y = nums[1];
+int z = nums[2];
+```
+
+BLOCK2: 
+```python
+if x + y <= z:
+```
+Corresponding Cpp Code:
+```cpp
+if (x + y <= z)  
+```
+
+BLOCK3: 
+```python
+return ""none""
+```
+Corresponding Cpp Code:
+```cpp
+return ""none"";
+```
+
+BLOCK4: 
+```python
+if x == z:
+```
+Corresponding Cpp Code:
+```cpp
+if (x == z)  
+```
+
+BLOCK5: 
+```python
+return ""equilateral""
+```
+Corresponding Cpp Code:
+```cpp
+return ""equilateral"";
+```
+
+BLOCK6: 
+```python
+if x == y or y == z:
+```
+Corresponding Cpp Code:
+```cpp
+if (x == y || y == z)
+```
+
+BLOCK7: 
+```python
+return ""isosceles""
+```
+Corresponding Cpp Code:
+```cpp
+return ""isosceles"";
+```
+
+BLOCK8: 
+```python
+return ""scalene""
+```
+Corresponding Cpp Code:
+```cpp
+return ""scalene"";
+```
+","```cpp
+std::string triangleType(std::vector<int>& nums) { // --- py stmt 1
+    std::sort(nums.begin(), nums.end()); // --- py stmt 2
+    int x = nums[0]; // --- py stmt 3
+    int y = nums[1];
+    int z = nums[2];
+
+    if (x + y <= z)  // --- py stmt 4
+        return ""none""; // --- py stmt 5
+    if (x == z)  // --- py stmt 6
+        return ""equilateral""; // --- py stmt 7
+    if (x == y || y == z) // --- py stmt 8
+        return ""isosceles""; // --- py stmt 9
+    return ""scalene""; // --- py stmt 10
+}
+```
+"
+"def sumOfPower( nums: List[int], k: int) -> int:
+    MOD = 1_000_000_007
+    n = len(nums)
+    f = [[0] * (n + 1) for _ in range(k + 1)]
+    f[0][0] = 1
+    for i, x in enumerate(nums):
+        for j in range(k, x - 1, -1):
+            for c in range(i + 1, 0, -1):
+                f[j][c] = (f[j][c] + f[j - x][c - 1]) % MOD
+    ans = 0
+    pow2 = 1
+    for i in range(n, 0, -1):
+        ans = (ans + f[k][i] * pow2) % MOD
+        pow2 = pow2 * 2 % MOD
+    return ans","int sumOfPower(vector<int>& nums, int k) {
+    int MOD = 1000000007;
+    int n = nums.size();
+    vector<vector<int>> f(k + 1, vector<int>(n + 1, 0));
+    f[0][0] = 1;
+    for (int i = 0; i < n; i++) {
+        int x = nums[i];
+        for (int j = k; j >= x; j--) {
+            for (int c = i + 1; c > 0; c--) {
+                f[j][c] = (f[j][c] + f[j - x][c - 1]) % MOD;
+            }
+        }
+    }
+    int ans = 0;
+    int pow2 = 1;
+    for (int i = n; i > 0; i--) {
+        ans = (ans + f[k][i] * pow2) % MOD;
+        pow2 = pow2 * 2 % MOD;
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def sumOfPower( nums: List[int], k: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int sumOfPower(vector<int>& nums, int k) {
+```
+
+BLOCK1: 
+```python
+MOD = 1_000_000_007
+n = len(nums)
+```
+Corresponding Cpp Code:
+```cpp
+int MOD = 1000000007;
+int n = nums.size();
+```
+
+BLOCK2: 
+```python
+f = [[0] * (n + 1) for _ in range(k + 1)]
+```
+Corresponding Cpp Code:
+```cpp
+vector<vector<int>> f(k + 1, vector<int>(n + 1, 0));
+```
+
+BLOCK3: 
+```python
+f[0][0] = 1
+```
+Corresponding Cpp Code:
+```cpp
+f[0][0] = 1;
+```
+
+BLOCK4: 
+```python
+for i, x in enumerate(nums):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK5: 
+```python
+for j in range(k, x - 1, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = k; j >= x; j--) {
+```
+
+BLOCK6: 
+```python
+for c in range(i + 1, 0, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int c = i + 1; c > 0; c--) {
+```
+
+BLOCK7: 
+```python
+f[j][c] = (f[j][c] + f[j - x][c - 1]) % MOD
+```
+Corresponding Cpp Code:
+```cpp
+f[j][c] = (f[j][c] + f[j - x][c - 1]) % MOD;
+```
+
+BLOCK8: 
+```python
+ans = 0
+pow2 = 1
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+int pow2 = 1;
+```
+
+BLOCK9: 
+```python
+for i in range(n, 0, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = n; i > 0; i--) {
+```
+
+BLOCK10: 
+```python
+ans = (ans + f[k][i] * pow2) % MOD
+pow2 = pow2 * 2 % MOD
+```
+Corresponding Cpp Code:
+```cpp
+ans = (ans + f[k][i] * pow2) % MOD;
+pow2 = pow2 * 2 % MOD;
+```
+
+BLOCK11: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int sumOfPower(vector<int>& nums, int k) { // --- py stmt 1
+    int MOD = 1000000007; // --- py stmt 2
+    int n = nums.size(); // --- py stmt 3
+    vector<vector<int>> f(k + 1, vector<int>(n + 1, 0)); // --- py stmt 4
+    f[0][0] = 1; // --- py stmt 5
+    for (int i = 0; i < n; i++) { // --- py stmt 6
+        int x = nums[i];
+        for (int j = k; j >= x; j--) { // --- py stmt 7
+            for (int c = i + 1; c > 0; c--) { // --- py stmt 8
+                f[j][c] = (f[j][c] + f[j - x][c - 1]) % MOD; // --- py stmt 9
+            }
+        }
+    }
+    int ans = 0; // --- py stmt 10
+    int pow2 = 1; // --- py stmt 11
+    for (int i = n; i > 0; i--) { // --- py stmt 12
+        ans = (ans + f[k][i] * pow2) % MOD; // --- py stmt 13
+        pow2 = pow2 * 2 % MOD; // --- py stmt 14
+    }
+    return ans; // --- py stmt 15
+}
+```
+"
+"def countAlternatingSubarrays( nums: List[int]) -> int:
+    res = cur = 0
+    pre = -1
+    for a in nums:
+        if pre != a:
+            cur += 1
+        else:
+            cur = 1
+        pre = a
+        res += cur
+    return res","int countAlternatingSubarrays(std::vector<int>& nums) {
+    int res = 0, cur = 0, pre = -1;
+    for (int a : nums) {
+        if (pre != a) {
+            cur += 1;
+        } else {
+            cur = 1;
+        }
+        pre = a;
+        res += cur;
+    }
+    return res;
+}","BLOCK0: 
+```python
+def countAlternatingSubarrays( nums: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int countAlternatingSubarrays(std::vector<int>& nums) {
+```
+
+BLOCK1: 
+```python
+res = cur = 0
+pre = -1
+```
+Corresponding Cpp Code:
+```cpp
+int res = 0, cur = 0, pre = -1;
+```
+
+BLOCK2: 
+```python
+for a in nums:
+```
+Corresponding Cpp Code:
+```cpp
+for (int a : nums) {
+```
+
+BLOCK3: 
+```python
+if pre != a:
+```
+Corresponding Cpp Code:
+```cpp
+if (pre != a) {
+```
+
+BLOCK4: 
+```python
+cur += 1
+```
+Corresponding Cpp Code:
+```cpp
+cur += 1;
+```
+
+BLOCK5: 
+```python
+else:
+    cur = 1
+```
+Corresponding Cpp Code:
+```cpp
+else {
+    cur = 1;
+}
+```
+
+BLOCK6: 
+```python
+pre = a
+```
+Corresponding Cpp Code:
+```cpp
+pre = a;
+```
+
+BLOCK7: 
+```python
+res += cur
+```
+Corresponding Cpp Code:
+```cpp
+res += cur;
+```
+
+BLOCK8: 
+```python
+return res
+```
+Corresponding Cpp Code:
+```cpp
+return res;
+```
+","```cpp
+int countAlternatingSubarrays(std::vector<int>& nums) { // --- py stmt 1
+    int res = 0, cur = 0, pre = -1; // --- py stmt 2
+    for (int a : nums) { // --- py stmt 4
+        if (pre != a) { // --- py stmt 5
+            cur += 1; // --- py stmt 6
+        } else { // --- py stmt 7
+            cur = 1; // --- py stmt 8
+        }
+        pre = a; // --- py stmt 9
+        res += cur; // --- py stmt 10
+    }
+    return res; // --- py stmt 11
+}
+```
+"
+"def accountBalanceAfterPurchase( purchaseAmount: int) -> int:
+    r = purchaseAmount % 10
+    purchaseAmount = purchaseAmount - r if r < 5 else purchaseAmount + 10 - r
+    return 100 - purchaseAmount","int accountBalanceAfterPurchase(int purchaseAmount) {
+    int r = purchaseAmount % 10;
+    if (r < 5)
+        purchaseAmount = purchaseAmount - r;
+    else
+        purchaseAmount = purchaseAmount + 10 - r;
+    return 100 - purchaseAmount;
+}","BLOCK0: 
+```python
+def accountBalanceAfterPurchase( purchaseAmount: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int accountBalanceAfterPurchase(int purchaseAmount) {
+```
+
+BLOCK1: 
+```python
+r = purchaseAmount % 10
+```
+Corresponding Cpp Code:
+```cpp
+int r = purchaseAmount % 10;
+```
+
+BLOCK2: 
+```python
+purchaseAmount = purchaseAmount - r if r < 5 else purchaseAmount + 10 - r
+```
+Corresponding Cpp Code:
+```cpp
+if (r < 5)
+    purchaseAmount = purchaseAmount - r;
+else
+    purchaseAmount = purchaseAmount + 10 - r;
+```
+
+BLOCK3: 
+```python
+return 100 - purchaseAmount
+```
+Corresponding Cpp Code:
+```cpp
+return 100 - purchaseAmount;
+```
+","```cpp
+int accountBalanceAfterPurchase(int purchaseAmount) { // --- py stmt 1
+    int r = purchaseAmount % 10; // --- py stmt 2
+    if (r < 5)
+        purchaseAmount = purchaseAmount - r; // --- py stmt 3
+    else
+        purchaseAmount = purchaseAmount + 10 - r; // --- py stmt 3
+    return 100 - purchaseAmount; // --- py stmt 4
+}
+```
+"
+"def maxOperations( nums: List[int]) -> int:
+    n, t = len(nums), 0
+    for i in range(1, n, 2):
+        if nums[i] + nums[i - 1] != nums[1] + nums[0]:
+            break
+        t += 1
+    return t","int maxOperations(std::vector<int>& nums) {
+    int n = nums.size(), t = 0;
+    for (int i = 1; i < n; i += 2) {
+        if (nums[i] + nums[i - 1] != nums[1] + nums[0]) {
+            break;
+        }
+        t++;
+    }
+    return t;
+}","BLOCK0: 
+```python
+def maxOperations( nums: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int maxOperations(std::vector<int>& nums) {
+```
+
+BLOCK1: 
+```python
+n, t = len(nums), 0
+```
+Corresponding Cpp Code:
+```cpp
+int n = nums.size(), t = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(1, n, 2):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 1; i < n; i += 2) {
+```
+
+BLOCK3: 
+```python
+if nums[i] + nums[i - 1] != nums[1] + nums[0]:
+```
+Corresponding Cpp Code:
+```cpp
+if (nums[i] + nums[i - 1] != nums[1] + nums[0]) {
+```
+
+BLOCK4: 
+```python
+t += 1
+```
+Corresponding Cpp Code:
+```cpp
+t++;
+```
+
+BLOCK5: 
+```python
+return t
+```
+Corresponding Cpp Code:
+```cpp
+return t;
+```
+","```cpp
+int maxOperations(std::vector<int>& nums) { // --- py stmt 1
+    int n = nums.size(), t = 0; // --- py stmt 2
+    for (int i = 1; i < n; i += 2) { // --- py stmt 3
+        if (nums[i] + nums[i - 1] != nums[1] + nums[0]) { // --- py stmt 4
+            break; // --- py stmt 5
+        }
+        t++; // --- py stmt 6
+    }
+    return t; // --- py stmt 7
+}
+```
+"
+"def distributeCandies2( n: int, limit: int) -> int:
+    ans = 0
+    for i in range(min(limit, n) + 1):
+        if n - i > 2 * limit:
+            continue
+        ans += min(n - i, limit) - max(0, n - i - limit) + 1
+    return ans","int distributeCandies2(int n, int limit) {
+    int ans = 0;
+    for (int i = 0; i <= std::min(limit, n); i++) {
+        if (n - i > 2 * limit)
+            continue;
+        ans += std::min(n - i, limit) - std::max(0, n - i - limit) + 1;
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def distributeCandies2( n: int, limit: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int distributeCandies2(int n, int limit) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(min(limit, n) + 1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i <= std::min(limit, n); i++) {
+```
+
+BLOCK3: 
+```python
+if n - i > 2 * limit:
+```
+Corresponding Cpp Code:
+```cpp
+if (n - i > 2 * limit)
+```
+
+BLOCK4: 
+```python
+ans += min(n - i, limit) - max(0, n - i - limit) + 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += std::min(n - i, limit) - std::max(0, n - i - limit) + 1;
+```
+
+BLOCK5: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int distributeCandies2(int n, int limit) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (int i = 0; i <= std::min(limit, n); i++) { // --- py stmt 3
+        if (n - i > 2 * limit) // --- py stmt 4
+            continue; // --- py stmt 5
+        ans += std::min(n - i, limit) - std::max(0, n - i - limit) + 1; // --- py stmt 6
+    }
+    return ans; // --- py stmt 7
+}
+```
+"
+"def distributeCandies( n: int, limit: int) -> int:
+    ans = 0
+    for i in range(limit + 1):
+        for j in range(limit + 1):
+            if i + j > n:
+                break
+            if n - i - j <= limit:
+                ans += 1
+    return ans","int distributeCandies(int n, int limit) {
+    int ans = 0;
+    for (int i = 0; i <= limit; i++) {
+        for (int j = 0; j <= limit; j++) {
+            if (i + j > n)
+                break;
+            if (n - i - j <= limit)
+                ans += 1;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def distributeCandies( n: int, limit: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int distributeCandies(int n, int limit) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(limit + 1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i <= limit; i++) {
+```
+
+BLOCK3: 
+```python
+for j in range(limit + 1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j <= limit; j++) {
+```
+
+BLOCK4: 
+```python
+if i + j > n:
+```
+Corresponding Cpp Code:
+```cpp
+if (i + j > n)
+```
+
+BLOCK5: 
+```python
+if n - i - j <= limit:
+```
+Corresponding Cpp Code:
+```cpp
+if (n - i - j <= limit)
+```
+
+BLOCK6: 
+```python
+ans += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += 1;
+```
+
+BLOCK7: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int distributeCandies(int n, int limit) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (int i = 0; i <= limit; i++) { // --- py stmt 3
+        for (int j = 0; j <= limit; j++) { // --- py stmt 4
+            if (i + j > n) // --- py stmt 5
+                break; // --- py stmt 6
+            if (n - i - j <= limit) // --- py stmt 7
+                ans += 1; // --- py stmt 8
+        }
+    }
+    return ans; // --- py stmt 9
+}
+```
+"
+"def theMaximumAchievableX( num: int, t: int) -> int:
+    return num + 2 * t","int theMaximumAchievableX(int num, int t) {
+    return num + 2 * t;
+}","BLOCK0: 
+```python
+def theMaximumAchievableX( num: int, t: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int theMaximumAchievableX(int num, int t) {
+```
+
+BLOCK1: 
+```python
+return num + 2 * t
+```
+Corresponding Cpp Code:
+```cpp
+return num + 2 * t;
+```
+","```cpp
+int theMaximumAchievableX(int num, int t) { // --- py stmt 1
+    return num + 2 * t; // --- py stmt 2
+}
+```
+"
+"def numberOfEmployeesWhoMetTarget( hours, target):
+    ans = 0
+    for i in range(0, len(hours)):
+        if hours[i] >= target:
+            ans += 1
+    return ans","int numberOfEmployeesWhoMetTarget(std::vector<int> hours, int target) {
+    int ans = 0;
+    for (int i = 0; i < hours.size(); i++) {
+        if (hours[i] >= target) {
+            ans += 1;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def numberOfEmployeesWhoMetTarget(hours, target):
+```
+Corresponding Cpp Code:
+```cpp
+int numberOfEmployeesWhoMetTarget(std::vector<int> hours, int target) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(0, len(hours)):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < hours.size(); i++) {
+```
+
+BLOCK3: 
+```python
+if hours[i] >= target:
+```
+Corresponding Cpp Code:
+```cpp
+if (hours[i] >= target) {
+```
+
+BLOCK4: 
+```python
+ans += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += 1;
+```
+
+BLOCK5: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int numberOfEmployeesWhoMetTarget(std::vector<int> hours, int target) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (int i = 0; i < hours.size(); i++) { // --- py stmt 3
+        if (hours[i] >= target) { // --- py stmt 4
+            ans += 1; // --- py stmt 5
+        }
+    }
+    return ans; // --- py stmt 6
+}
+```
+"
+"def countTestedDevices( batteryPercentages: List[int]) -> int:
+    n = len(batteryPercentages)
+    need = 0
+    for i in range(n):
+        if batteryPercentages[i] > 0:
+            need += 1
+            for j in range(i + 1, n):
+                batteryPercentages[j] = max(batteryPercentages[j] - 1, 0)
+    return need","int countTestedDevices(std::vector<int>& batteryPercentages) {
+    int n = batteryPercentages.size();
+    int need = 0;
+    for (int i = 0; i < n; i++) {
+        if (batteryPercentages[i] > 0) {
+            need += 1;
+            for (int j = i + 1; j < n; j++) {
+                batteryPercentages[j] = std::max(batteryPercentages[j] - 1, 0);
+            }
+        }
+    }
+    return need;
+}","BLOCK0: 
+```python
+def countTestedDevices( batteryPercentages: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int countTestedDevices(std::vector<int>& batteryPercentages) {
+```
+
+BLOCK1: 
+```python
+n = len(batteryPercentages)
+need = 0
+```
+Corresponding Cpp Code:
+```cpp
+int n = batteryPercentages.size();
+int need = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+if batteryPercentages[i] > 0:
+```
+Corresponding Cpp Code:
+```cpp
+if (batteryPercentages[i] > 0) {
+```
+
+BLOCK4: 
+```python
+need += 1
+```
+Corresponding Cpp Code:
+```cpp
+need += 1;
+```
+
+BLOCK5: 
+```python
+for j in range(i + 1, n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = i + 1; j < n; j++) {
+```
+
+BLOCK6: 
+```python
+batteryPercentages[j] = max(batteryPercentages[j] - 1, 0)
+```
+Corresponding Cpp Code:
+```cpp
+batteryPercentages[j] = std::max(batteryPercentages[j] - 1, 0);
+```
+
+BLOCK7: 
+```python
+return need
+```
+Corresponding Cpp Code:
+```cpp
+return need;
+```
+","```cpp
+int countTestedDevices(std::vector<int>& batteryPercentages) { // --- py stmt 1
+    int n = batteryPercentages.size(); // --- py stmt 2
+    int need = 0; // --- py stmt 3
+    for (int i = 0; i < n; i++) { // --- py stmt 4
+        if (batteryPercentages[i] > 0) { // --- py stmt 5
+            need += 1; // --- py stmt 6
+            for (int j = i + 1; j < n; j++) { // --- py stmt 7
+                batteryPercentages[j] = std::max(batteryPercentages[j] - 1, 0); // --- py stmt 8
+            }
+        }
+    }
+    return need; // --- py stmt 9
+}
+```
+"
+"def maximumBinaryString( binary: str) -> str:
+    n = len(binary)
+    s = list(binary)
+    j = 0
+    for i in range(n):
+        if s[i] == '0':
+            while j <= i or (j < n and s[j] == '1'):
+                j += 1
+            if j < n:
+                s[j] = '1'
+                s[i] = '1'
+                s[i + 1] = '0'
+    return ''.join(s)","std::string maximumBinaryString(std::string binary) {
+    int n = binary.size();
+    std::vector<char> s(binary.begin(), binary.end());
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == '0') {
+            while (j <= i || (j < n && s[j] == '1')) {
+                j += 1;
+            }
+            if (j < n) {
+                s[j] = '1';
+                s[i] = '1';
+                s[i + 1] = '0';
+            }
+        }
+    }
+    return std::string(s.begin(), s.end());
+}","BLOCK0: 
+```python
+def maximumBinaryString( binary: str) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string maximumBinaryString(std::string binary) {
+```
+
+BLOCK1: 
+```python
+n = len(binary)
+s = list(binary)
+j = 0
+```
+Corresponding Cpp Code:
+```cpp
+int n = binary.size();
+std::vector<char> s(binary.begin(), binary.end());
+int j = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+if s[i] == '0':
+```
+Corresponding Cpp Code:
+```cpp
+if (s[i] == '0') {
+```
+
+BLOCK4: 
+```python
+while j <= i or (j < n and s[j] == '1'):
+```
+Corresponding Cpp Code:
+```cpp
+while (j <= i || (j < n && s[j] == '1')) {
+```
+
+BLOCK5: 
+```python
+j += 1
+```
+Corresponding Cpp Code:
+```cpp
+j += 1;
+```
+
+BLOCK6: 
+```python
+if j < n:
+```
+Corresponding Cpp Code:
+```cpp
+if (j < n) {
+```
+
+BLOCK7: 
+```python
+s[j] = '1'
+s[i] = '1'
+s[i + 1] = '0'
+```
+Corresponding Cpp Code:
+```cpp
+s[j] = '1';
+s[i] = '1';
+s[i + 1] = '0';
+```
+
+BLOCK8: 
+```python
+return ''.join(s)
+```
+Corresponding Cpp Code:
+```cpp
+return std::string(s.begin(), s.end());
+```
+","```cpp
+std::string maximumBinaryString(std::string binary) { // --- py stmt 1
+    int n = binary.size(); // --- py stmt 2
+    std::vector<char> s(binary.begin(), binary.end()); // --- py stmt 3
+    int j = 0; // --- py stmt 4
+    for (int i = 0; i < n; i++) { // --- py stmt 5
+        if (s[i] == '0') { // --- py stmt 6
+            while (j <= i || (j < n && s[j] == '1')) { // --- py stmt 7
+                j += 1; // --- py stmt 8
+            }
+            if (j < n) { // --- py stmt 9
+                s[j] = '1'; // --- py stmt 10
+                s[i] = '1'; // --- py stmt 11
+                s[i + 1] = '0'; // --- py stmt 12
+            }
+        }
+    }
+    return std::string(s.begin(), s.end()); // --- py stmt 13
+}
+```
+"
+"def findKOr( nums: List[int], k: int) -> int:
+    ans = 0
+    for i in range(31):
+        cnt = sum(1 for num in nums if ((num >> i) & 1) > 0)
+        if cnt >= k:
+            ans |= 1 << i
+    return ans","int findKOr(std::vector<int>& nums, int k) {
+    int ans = 0;
+    for (int i = 0; i < 32; ++i) {
+        int cnt = 0;
+        for (int num : nums) {
+            if ((num >> i) & 1) {
+                ++cnt;
+            }
+        }
+        if (cnt >= k) {
+            ans |= (1 << i);
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def findKOr( nums: List[int], k: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int findKOr(std::vector<int>& nums, int k) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(31):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < 32; ++i) {
+```
+
+BLOCK3: 
+```python
+cnt = sum(1 for num in nums if ((num >> i) & 1) > 0)
+```
+Corresponding Cpp Code:
+```cpp
+int cnt = 0;
+for (int num : nums) {
+    if ((num >> i) & 1) {
+        ++cnt;
+    }
+}
+```
+
+BLOCK4: 
+```python
+if cnt >= k:
+```
+Corresponding Cpp Code:
+```cpp
+if (cnt >= k) {
+```
+
+BLOCK5: 
+```python
+ans |= 1 << i
+```
+Corresponding Cpp Code:
+```cpp
+ans |= (1 << i);
+```
+
+BLOCK6: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int findKOr(std::vector<int>& nums, int k) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (int i = 0; i < 32; ++i) { // --- py stmt 3
+        int cnt = 0;
+        for (int num : nums) { // --- py stmt 4
+            if ((num >> i) & 1) {
+                ++cnt;
+            }
+        }
+        if (cnt >= k) { // --- py stmt 5
+            ans |= (1 << i); // --- py stmt 6
+        }
+    }
+    return ans; // --- py stmt 7
+}
+```
+"
+"def maxNumberOfAlloys( n: int, k: int, budget: int, composition: List[List[int]], stock: List[int], cost: List[int]) -> int:
+    left, right, ans = 1, 2 * 10**8, 0
+    while left <= right:
+        mid = (left + right) // 2
+        valid = False
+        for i in range(k):
+            spend = 0
+            for j, (composition_j, stock_j, cost_j) in enumerate(zip(composition[i], stock, cost)):
+                spend += max(composition_j * mid - stock_j, 0) * cost_j
+            if spend <= budget:
+                valid = True
+                break
+        if valid:
+            ans = mid
+            left = mid + 1
+        else:
+            right = mid - 1
+    return ans","int maxNumberOfAlloys(int n, int k, int budget, vector<vector<int>>& composition, vector<int>& stock, vector<int>& cost) {
+    int left = 1, right = 2 * 10000000, ans = 0;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        bool valid = false;
+        for (int i = 0; i < k; i++) {
+            int spend = 0;
+            for (int j = 0; j < n; j++) {
+                spend += max(composition[i][j] * mid - stock[j], 0) * cost[j];
+            }
+            if (spend <= budget) {
+                valid = true;
+                break;
+            }
+        }
+        if (valid) {
+            ans = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def maxNumberOfAlloys( n: int, k: int, budget: int, composition: List[List[int]], stock: List[int], cost: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int maxNumberOfAlloys(int n, int k, int budget, vector<vector<int>>& composition, vector<int>& stock, vector<int>& cost);
+```
+
+BLOCK1: 
+```python
+left, right, ans = 1, 2 * 10**8, 0
+```
+Corresponding Cpp Code:
+```cpp
+int left = 1, right = 2 * 10000000, ans = 0;
+```
+
+BLOCK2: 
+```python
+while left <= right:
+```
+Corresponding Cpp Code:
+```cpp
+while (left <= right) {
+```
+
+BLOCK3: 
+```python
+mid = (left + right) // 2
+```
+Corresponding Cpp Code:
+```cpp
+int mid = (left + right) / 2;
+```
+
+BLOCK4: 
+```python
+for i in range(k):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < k; i++) {
+```
+
+BLOCK5: 
+```python
+spend = 0
+```
+Corresponding Cpp Code:
+```cpp
+int spend = 0;
+```
+
+BLOCK6: 
+```python
+for j, (composition_j, stock_j, cost_j) in enumerate(zip(composition[i], stock, cost)):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 0; j < n; j++) {
+```
+
+BLOCK7: 
+```python
+spend += max(composition_j * mid - stock_j, 0) * cost_j
+```
+Corresponding Cpp Code:
+```cpp
+spend += max(composition[i][j] * mid - stock[j], 0) * cost[j];
+```
+
+BLOCK8: 
+```python
+if spend <= budget:
+```
+Corresponding Cpp Code:
+```cpp
+if (spend <= budget) {
+```
+
+BLOCK9: 
+```python
+valid = True
+```
+Corresponding Cpp Code:
+```cpp
+valid = true;
+```
+
+BLOCK10: 
+```python
+if valid:
+```
+Corresponding Cpp Code:
+```cpp
+if (valid) {
+```
+
+BLOCK11: 
+```python
+ans = mid
+left = mid + 1
+```
+Corresponding Cpp Code:
+```cpp
+ans = mid;
+left = mid + 1;
+```
+
+BLOCK12: 
+```python
+else:
+    right = mid - 1
+```
+Corresponding Cpp Code:
+```cpp
+else {
+    right = mid - 1;
+}
+```
+
+BLOCK13: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int maxNumberOfAlloys(int n, int k, int budget, vector<vector<int>>& composition, vector<int>& stock, vector<int>& cost) { // --- py stmt 1
+    int left = 1, right = 2 * 10000000, ans = 0; // --- py stmt 2
+    while (left <= right) { // --- py stmt 3
+        int mid = (left + right) / 2; // --- py stmt 4
+        bool valid = false; // --- py stmt 5
+        for (int i = 0; i < k; i++) { // --- py stmt 6
+            int spend = 0; // --- py stmt 7
+            for (int j = 0; j < n; j++) { // --- py stmt 8
+                spend += max(composition[i][j] * mid - stock[j], 0) * cost[j]; // --- py stmt 9
+            }
+            if (spend <= budget) { // --- py stmt 10
+                valid = true; // --- py stmt 11
+                break; // --- py stmt 12
+            }
+        }
+        if (valid) { // --- py stmt 13
+            ans = mid; // --- py stmt 14
+            left = mid + 1; // --- py stmt 15
+        } else { // --- py stmt 16
+            right = mid - 1; // --- py stmt 17
+        }
+    }
+    return ans; // --- py stmt 18
+}
+```
+
+## Python_code
+def maxNumberOfAlloys( n: int, k: int, budget: int, composition: List[List[int]], stock: List[int], cost: List[int]) -> int: # --- py stmt 1
+    left, right, ans = 1, 2 * 10**8, 0 # --- py stmt 2
+    while left <= right: # --- py stmt 3
+        mid = (left + right) // 2 # --- py stmt 4
+        valid = False # --- py stmt 5
+        for i in range(k): # --- py stmt 6
+            spend = 0 # --- py stmt 7
+            for j, (composition_j, stock_j, cost_j) in enumerate(zip(composition[i], stock, cost)): # --- py stmt 8
+                spend += max(composition_j * mid - stock_j, 0) * cost_j # --- py stmt 9
+            if spend <= budget: # --- py stmt 10
+                valid = True # --- py stmt 11
+                break # --- py stmt 12
+        if valid: # --- py stmt 13
+            ans = mid # --- py stmt 14
+            left = mid + 1 # --- py stmt 15
+        else: # --- py stmt 16
+            right = mid - 1 # --- py stmt 17
+    return ans # --- py stmt 18
+
+## Cpp_code
+int maxNumberOfAlloys(int n, int k, int budget, vector<vector<int>>& composition, vector<int>& stock, vector<int>& cost) {
+    int left = 1, right = 2 * 10000000, ans = 0;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        bool valid = false;
+        for (int i = 0; i < k; i++) {
+            int spend = 0;
+            for (int j = 0; j < n; j++) {
+                spend += max(composition[i][j] * mid - stock[j], 0) * cost[j];
+            }
+            if (spend <= budget) {
+                valid = true;
+                break;
+            }
+        }
+        if (valid) {
+            ans = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return ans;
+}
+```
+"
+"def maximumSumOfHeights( maxHeights: List[int]) -> int:
+    n = len(maxHeights)
+    res = 0
+    for i in range(n):
+        pre, psum = maxHeights[i], maxHeights[i]
+        for j in range(i - 1, -1, -1):
+            pre = min(pre, maxHeights[j])
+            psum += pre
+        suf = maxHeights[i]
+        for j in range(i + 1, n):
+            suf = min(suf, maxHeights[j])
+            psum += suf
+        res = max(res, psum)
+    return res","int maximumSumOfHeights(vector<int>& maxHeights) {
+    int n = maxHeights.size();
+    int res = 0;
+    for (int i = 0; i < n; i++) {
+        int pre = maxHeights[i], psum = maxHeights[i];
+        for (int j = i - 1; j >= 0; j--) {
+            pre = min(pre, maxHeights[j]);
+            psum += pre;
+        }
+        int suf = maxHeights[i];
+        for (int j = i + 1; j < n; j++) {
+            suf = min(suf, maxHeights[j]);
+            psum += suf;
+        }
+        res = max(res, psum);
+    }
+    return res;
+}","BLOCK0: 
+```python
+def maximumSumOfHeights( maxHeights: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int maximumSumOfHeights(vector<int>& maxHeights) {
+```
+
+BLOCK1: 
+```python
+n = len(maxHeights)
+res = 0
+```
+Corresponding Cpp Code:
+```cpp
+int n = maxHeights.size();
+int res = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+pre, psum = maxHeights[i], maxHeights[i]
+```
+Corresponding Cpp Code:
+```cpp
+int pre = maxHeights[i], psum = maxHeights[i];
+```
+
+BLOCK4: 
+```python
+for j in range(i - 1, -1, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = i - 1; j >= 0; j--) {
+```
+
+BLOCK5: 
+```python
+pre = min(pre, maxHeights[j])
+psum += pre
+```
+Corresponding Cpp Code:
+```cpp
+pre = min(pre, maxHeights[j]);
+psum += pre;
+```
+
+BLOCK6: 
+```python
+suf = maxHeights[i]
+```
+Corresponding Cpp Code:
+```cpp
+int suf = maxHeights[i];
+```
+
+BLOCK7: 
+```python
+for j in range(i + 1, n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = i + 1; j < n; j++) {
+```
+
+BLOCK8: 
+```python
+suf = min(suf, maxHeights[j])
+psum += suf
+```
+Corresponding Cpp Code:
+```cpp
+suf = min(suf, maxHeights[j]);
+psum += suf;
+```
+
+BLOCK9: 
+```python
+res = max(res, psum)
+```
+Corresponding Cpp Code:
+```cpp
+res = max(res, psum);
+```
+
+BLOCK10: 
+```python
+return res
+```
+Corresponding Cpp Code:
+```cpp
+return res;
+```
+","```cpp
+int maximumSumOfHeights(vector<int>& maxHeights) { // --- py stmt 1
+    int n = maxHeights.size(); // --- py stmt 2
+    int res = 0; // --- py stmt 3
+    for (int i = 0; i < n; i++) { // --- py stmt 4
+        int pre = maxHeights[i], psum = maxHeights[i]; // --- py stmt 5
+        for (int j = i - 1; j >= 0; j--) { // --- py stmt 6
+            pre = min(pre, maxHeights[j]); // --- py stmt 7
+            psum += pre; // --- py stmt 8
+        }
+        int suf = maxHeights[i]; // --- py stmt 9
+        for (int j = i + 1; j < n; j++) { // --- py stmt 10
+            suf = min(suf, maxHeights[j]); // --- py stmt 11
+            psum += suf; // --- py stmt 12
+        }
+        res = max(res, psum); // --- py stmt 13
+    }
+    return res; // --- py stmt 14
+}
+```
+"
+"def alternatingSubarray( nums: List[int]) -> int:
+    res = -1
+    n = len(nums)
+    for firstIndex in range(n):
+        for i in range(firstIndex + 1, n):
+            length = i - firstIndex + 1
+            if nums[i] - nums[firstIndex] == (length - 1) % 2:
+                res = max(res, length)
+            else:
+                break
+    return res","int alternatingSubarray(std::vector<int>& nums) {
+    int res = -1;
+    int n = nums.size();
+    for (int firstIndex = 0; firstIndex < n; ++firstIndex) {
+        for (int i = firstIndex + 1; i < n; ++i) {
+            int length = i - firstIndex + 1;
+            if (nums[i] - nums[firstIndex] == (length - 1) % 2) {
+                res = std::max(res, length);
+            } else {
+                break;
+            }
+        }
+    }
+    return res;
+}","BLOCK0: 
+```python
+def alternatingSubarray( nums: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int alternatingSubarray(std::vector<int>& nums) {
+```
+
+BLOCK1: 
+```python
+res = -1
+n = len(nums)
+```
+Corresponding Cpp Code:
+```cpp
+int res = -1;
+int n = nums.size();
+```
+
+BLOCK2: 
+```python
+for firstIndex in range(n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int firstIndex = 0; firstIndex < n; ++firstIndex) {
+```
+
+BLOCK3: 
+```python
+for i in range(firstIndex + 1, n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = firstIndex + 1; i < n; ++i) {
+```
+
+BLOCK4: 
+```python
+length = i - firstIndex + 1
+```
+Corresponding Cpp Code:
+```cpp
+int length = i - firstIndex + 1;
+```
+
+BLOCK5: 
+```python
+if nums[i] - nums[firstIndex] == (length - 1) % 2:
+```
+Corresponding Cpp Code:
+```cpp
+if (nums[i] - nums[firstIndex] == (length - 1) % 2) {
+```
+
+BLOCK6: 
+```python
+res = max(res, length)
+```
+Corresponding Cpp Code:
+```cpp
+res = std::max(res, length);
+```
+
+BLOCK7: 
+```python
+return res
+```
+Corresponding Cpp Code:
+```cpp
+return res;
+```
+","```cpp
+int alternatingSubarray(std::vector<int>& nums) { // --- py stmt 1
+    int res = -1; // --- py stmt 2
+    int n = nums.size(); // --- py stmt 3
+    for (int firstIndex = 0; firstIndex < n; ++firstIndex) { // --- py stmt 4
+        for (int i = firstIndex + 1; i < n; ++i) { // --- py stmt 5
+            int length = i - firstIndex + 1; // --- py stmt 6
+            if (nums[i] - nums[firstIndex] == (length - 1) % 2) { // --- py stmt 7
+                res = std::max(res, length); // --- py stmt 8
+            } else { // --- py stmt 9
+                break; // --- py stmt 10
+            }
+        }
+    }
+    return res; // --- py stmt 11
+}
+```
+"
+"def minimumTime( nums1: List[int], nums2: List[int], x: int) -> int:
+    n = len(nums1)
+    dp = [[0] * (n + 1) for _ in range(n + 1)]
+    for j, (b, a) in enumerate(sorted(zip(nums2, nums1)), 1):
+        for i in range(j, 0, -1):
+            dp[j][i] = max(dp[j - 1][i], dp[j - 1][i - 1] + i * b + a)
+    sa, sb = sum(nums1), sum(nums2)
+    for i in range(0, n + 1):
+        if sb * i + sa - dp[n][i] <= x:
+            return i
+    return -1","int minimumTime(vector<int>& nums1, vector<int>& nums2, int x) {
+    int n = nums1.size();
+    vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
+    for (int j = 1; j <= n; ++j) {
+        int b = nums2[j - 1], a = nums1[j - 1];
+        for (int i = j; i >= 1; --i) {
+            dp[j][i] = max(dp[j - 1][i], dp[j - 1][i - 1] + i * b + a);
+        }
+    }
+    int sa = accumulate(nums1.begin(), nums1.end(), 0);
+    int sb = accumulate(nums2.begin(), nums2.end(), 0);
+    for (int i = 0; i <= n; ++i) {
+        if (sb * i + sa - dp[n][i] <= x) {
+            return i;
+        }
+    }
+    return -1;
+}","BLOCK0: 
+```python
+def minimumTime( nums1: List[int], nums2: List[int], x: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int minimumTime(vector<int>& nums1, vector<int>& nums2, int x) {
+```
+
+BLOCK1: 
+```python
+n = len(nums1)
+```
+Corresponding Cpp Code:
+```cpp
+int n = nums1.size();
+```
+
+BLOCK2: 
+```python
+dp = [[0] * (n + 1) for _ in range(n + 1)]
+```
+Corresponding Cpp Code:
+```cpp
+vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
+```
+
+BLOCK3: 
+```python
+for j, (b, a) in enumerate(sorted(zip(nums2, nums1)), 1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = 1; j <= n; ++j) {
+    int b = nums2[j - 1], a = nums1[j - 1];
+```
+
+BLOCK4: 
+```python
+for i in range(j, 0, -1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = j; i >= 1; --i) {
+```
+
+BLOCK5: 
+```python
+dp[j][i] = max(dp[j - 1][i], dp[j - 1][i - 1] + i * b + a)
+```
+Corresponding Cpp Code:
+```cpp
+dp[j][i] = max(dp[j - 1][i], dp[j - 1][i - 1] + i * b + a);
+```
+
+BLOCK6: 
+```python
+sa, sb = sum(nums1), sum(nums2)
+```
+Corresponding Cpp Code:
+```cpp
+int sa = accumulate(nums1.begin(), nums1.end(), 0);
+int sb = accumulate(nums2.begin(), nums2.end(), 0);
+```
+
+BLOCK7: 
+```python
+for i in range(0, n + 1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i <= n; ++i) {
+```
+
+BLOCK8: 
+```python
+if sb * i + sa - dp[n][i] <= x:
+```
+Corresponding Cpp Code:
+```cpp
+if (sb * i + sa - dp[n][i] <= x) {
+```
+
+BLOCK9: 
+```python
+return i
+```
+Corresponding Cpp Code:
+```cpp
+return i;
+```
+
+BLOCK10: 
+```python
+return -1
+```
+Corresponding Cpp Code:
+```cpp
+return -1;
+```
+","```cpp
+int minimumTime(vector<int>& nums1, vector<int>& nums2, int x) { // --- py stmt 1
+    int n = nums1.size(); // --- py stmt 2
+    vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0)); // --- py stmt 3
+    for (int j = 1; j <= n; ++j) { // --- py stmt 4
+        int b = nums2[j - 1], a = nums1[j - 1];
+        for (int i = j; i >= 1; --i) { // --- py stmt 5
+            dp[j][i] = max(dp[j - 1][i], dp[j - 1][i - 1] + i * b + a); // --- py stmt 6
+        }
+    }
+    int sa = accumulate(nums1.begin(), nums1.end(), 0); // --- py stmt 7
+    int sb = accumulate(nums2.begin(), nums2.end(), 0);
+    for (int i = 0; i <= n; ++i) { // --- py stmt 8
+        if (sb * i + sa - dp[n][i] <= x) { // --- py stmt 9
+            return i; // --- py stmt 10
+        }
+    }
+    return -1; // --- py stmt 11
+}
+```
+"
+"def equality( A, B):
+    if A > B:
+        return 0
+    if A == B:
+        return 1
+    if B % 2 == 0:
+        return 1
+    return 0","int equality(int A, int B) {
+    if (A > B) {
+        return 0;
+    }
+    if (A == B) {
+        return 1;
+    }
+    if (B % 2 == 0) {
+        return 1;
+    }
+    return 0;
+}","BLOCK0: 
+```python
+def equality( A, B):
+```
+Corresponding Cpp Code:
+```cpp
+int equality(int A, int B) {
+```
+
+BLOCK1: 
+```python
+if A > B:
+```
+Corresponding Cpp Code:
+```cpp
+if (A > B) {
+```
+
+BLOCK2: 
+```python
+return 0
+```
+Corresponding Cpp Code:
+```cpp
+return 0;
+```
+
+BLOCK3: 
+```python
+if A == B:
+```
+Corresponding Cpp Code:
+```cpp
+if (A == B) {
+```
+
+BLOCK4: 
+```python
+return 1
+```
+Corresponding Cpp Code:
+```cpp
+return 1;
+```
+
+BLOCK5: 
+```python
+if B % 2 == 0:
+```
+Corresponding Cpp Code:
+```cpp
+if (B % 2 == 0) {
+```
+
+BLOCK6: 
+```python
+return 1
+```
+Corresponding Cpp Code:
+```cpp
+return 1;
+```
+
+BLOCK7: 
+```python
+return 0
+```
+Corresponding Cpp Code:
+```cpp
+return 0;
+```
+","```cpp
+int equality(int A, int B) { // --- py stmt 1
+    if (A > B) { // --- py stmt 2
+        return 0; // --- py stmt 3
+    }
+    if (A == B) { // --- py stmt 4
+        return 1; // --- py stmt 5
+    }
+    if (B % 2 == 0) { // --- py stmt 6
+        return 1; // --- py stmt 7
+    }
+    return 0; // --- py stmt 8
+}
+```
+"
+"def isMagicArray( n : int, arr : List[int]) -> bool:
+    for i in range(n-1):
+        if (arr[i]&1)==(arr[i+1]&1):
+            return 0
+    return 1","bool isMagicArray(int n, std::vector<int>& arr) {
+    for (int i = 0; i < n - 1; i++) {
+        if ((arr[i] & 1) == (arr[i + 1] & 1)) {
+            return false;
+        }
+    }
+    return true;
+}","BLOCK0: 
+```python
+def isMagicArray( n : int, arr : List[int]) -> bool:
+```
+Corresponding Cpp Code:
+```cpp
+bool isMagicArray(int n, std::vector<int>& arr) {
+```
+
+BLOCK1: 
+```python
+for i in range(n-1):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n - 1; i++) {
+```
+
+BLOCK2: 
+```python
+if (arr[i]&1)==(arr[i+1]&1):
+```
+Corresponding Cpp Code:
+```cpp
+if ((arr[i] & 1) == (arr[i + 1] & 1)) {
+```
+
+BLOCK3: 
+```python
+return 0
+```
+Corresponding Cpp Code:
+```cpp
+return false;
+```
+
+BLOCK4: 
+```python
+return 1
+```
+Corresponding Cpp Code:
+```cpp
+return true;
+```
+","```cpp
+bool isMagicArray(int n, std::vector<int>& arr) { // --- py stmt 1
+    for (int i = 0; i < n - 1; i++) { // --- py stmt 2
+        if ((arr[i] & 1) == (arr[i + 1] & 1)) { // --- py stmt 3
+            return false; // --- py stmt 4
+        }
+    }
+    return true; // --- py stmt 5
+}
+```
+"
+"def isPossible( a: int, b: int, c: int) -> str:
+    
+    if (a + b) > c and (a + c) > b and (b + c) > a:
+        return ""YES""
+    else:
+        return ""NO""","std::string isPossible(int a, int b, int c) {
+    if ((a + b) > c && (a + c) > b && (b + c) > a) {
+        return ""YES"";
+    } else {
+        return ""NO"";
+    }
+}","BLOCK0: 
+```python
+def isPossible( a: int, b: int, c: int) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string isPossible(int a, int b, int c) {
+```
+
+BLOCK1: 
+```python
+if (a + b) > c and (a + c) > b and (b + c) > a:
+```
+Corresponding Cpp Code:
+```cpp
+if ((a + b) > c && (a + c) > b && (b + c) > a) {
+```
+
+BLOCK2: 
+```python
+return ""YES""
+```
+Corresponding Cpp Code:
+```cpp
+return ""YES"";
+```
+
+BLOCK3: 
+```python
+else:
+    return ""NO""
+```
+Corresponding Cpp Code:
+```cpp
+else {
+    return ""NO"";
+}
+```
+","```cpp
+std::string isPossible(int a, int b, int c) { // --- py stmt 1
+    if ((a + b) > c && (a + c) > b && (b + c) > a) { // --- py stmt 2
+        return ""YES""; // --- py stmt 3
+    } else { // --- py stmt 4
+        return ""NO""; // --- py stmt 5
+    }
+}
+```
+"
+"def isFriend( n : int, x : int, y : int, arr : List[int]) -> str:
+    if y-x in arr:
+        return ""yes""
+    else:
+        return ""no""","std::string isFriend(int n, int x, int y, std::vector<int> arr) {
+    if (std::find(arr.begin(), arr.end(), y-x) != arr.end()) {
+        return ""yes"";
+    } else {
+        return ""no"";
+    }
+}","BLOCK0: 
+```python
+def isFriend( n : int, x : int, y : int, arr : List[int]) -> str:
+```
+Corresponding Cpp Code:
+```cpp
+std::string isFriend(int n, int x, int y, std::vector<int> arr) {
+```
+
+BLOCK1: 
+```python
+if y-x in arr:
+```
+Corresponding Cpp Code:
+```cpp
+if (std::find(arr.begin(), arr.end(), y-x) != arr.end()) {
+```
+
+BLOCK2: 
+```python
+return ""yes""
+```
+Corresponding Cpp Code:
+```cpp
+return ""yes"";
+```
+
+BLOCK3: 
+```python
+return ""no""
+```
+Corresponding Cpp Code:
+```cpp
+return ""no"";
+```
+","```cpp
+#include <algorithm>
+#include <vector>
+
+std::string isFriend(int n, int x, int y, std::vector<int> arr) { // --- py stmt 1
+    if (std::find(arr.begin(), arr.end(), y-x) != arr.end()) { // --- py stmt 2
+        return ""yes""; // --- py stmt 3
+    } else { // --- py stmt 4
+        return ""no""; // --- py stmt 5
+    }
+}
+```
+
+The Python code and C++ code are almost identical, but there are some differences due to the differences in the languages. The Python `in` keyword is equivalent to the C++ `std::find` function. The Python `def` keyword is used to define a function, while the C++ `std::string` function is used to define a function that returns a string. The Python `return` keyword is used to return a value from a function, while the C++ `return` keyword is used to return a value from a function and to exit a function.
+"
+"def chocolateDistribution( N, M, arr, brr):
+    arr.sort()
+    brr.sort()
+    ans = 0
+    i, j = 0, 0
+    while i < N and j < M:
+        if arr[i] <= brr[j]:
+            ans += 1
+            i += 1
+            j += 1
+        else:
+            j += 1
+    return ans","int chocolateDistribution(int N, int M, vector<int> arr, vector<int> brr) {
+    sort(arr.begin(), arr.end());
+    sort(brr.begin(), brr.end());
+    int ans = 0;
+    int i = 0, j = 0;
+    while (i < N && j < M) {
+        if (arr[i] <= brr[j]) {
+            ans++;
+            i++;
+            j++;
+        } else {
+            j++;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def chocolateDistribution( N, M, arr, brr):
+```
+Corresponding Cpp Code:
+```cpp
+int chocolateDistribution(int N, int M, vector<int> arr, vector<int> brr) {
+```
+
+BLOCK1: 
+```python
+arr.sort()
+brr.sort()
+ans = 0
+i, j = 0, 0
+```
+Corresponding Cpp Code:
+```cpp
+sort(arr.begin(), arr.end());
+sort(brr.begin(), brr.end());
+int ans = 0;
+int i = 0, j = 0;
+```
+
+BLOCK2: 
+```python
+while i < N and j < M:
+```
+Corresponding Cpp Code:
+```cpp
+while (i < N && j < M) {
+```
+
+BLOCK3: 
+```python
+if arr[i] <= brr[j]:
+```
+Corresponding Cpp Code:
+```cpp
+if (arr[i] <= brr[j]) {
+```
+
+BLOCK4: 
+```python
+ans += 1
+i += 1
+j += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans++;
+i++;
+j++;
+```
+
+BLOCK5: 
+```python
+else:
+j += 1
+```
+Corresponding Cpp Code:
+```cpp
+} else {
+j++;
+```
+
+BLOCK6: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int chocolateDistribution(int N, int M, vector<int> arr, vector<int> brr) { // --- py stmt 1
+    sort(arr.begin(), arr.end()); // --- py stmt 2
+    sort(brr.begin(), brr.end()); // --- py stmt 3
+    int ans = 0; // --- py stmt 4
+    int i = 0, j = 0; // --- py stmt 5
+    while (i < N && j < M) { // --- py stmt 6
+        if (arr[i] <= brr[j]) { // --- py stmt 7
+            ans++; // --- py stmt 8
+            i++; // --- py stmt 9
+            j++; // --- py stmt 10
+        } else { // --- py stmt 11
+            j++; // --- py stmt 12
+        }
+    }
+    return ans; // --- py stmt 13
+}
+```
+"
+"def resultArray( nums: List[int]) -> List[int]:
+    a = nums[:1]
+    b = nums[1:2]
+    for x in nums[2:]:
+        if a[-1] > b[-1]:
+            a.append(x)
+        else:
+            b.append(x)
+    return a + b","std::vector<int> resultArray(std::vector<int> nums) {
+    std::vector<int> a = {nums[0]};
+    std::vector<int> b = {nums[1]};
+    for (size_t i = 2; i < nums.size(); i++) {
+        if (a.back() > b.back()) {
+            a.push_back(nums[i]);
+        } else {
+            b.push_back(nums[i]);
+        }
+    }
+    a.insert(a.end(), b.begin(), b.end());
+    return a;
+}","BLOCK0: 
+```python
+def resultArray( nums: List[int]) -> List[int]:
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> resultArray(std::vector<int> nums) {
+```
+
+BLOCK1: 
+```python
+a = nums[:1]
+b = nums[1:2]
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> a = {nums[0]};
+std::vector<int> b = {nums[1]};
+```
+
+BLOCK2: 
+```python
+for x in nums[2:]:
+```
+Corresponding Cpp Code:
+```cpp
+for (size_t i = 2; i < nums.size(); i++) {
+```
+
+BLOCK3: 
+```python
+if a[-1] > b[-1]:
+```
+Corresponding Cpp Code:
+```cpp
+if (a.back() > b.back()) {
+```
+
+BLOCK4: 
+```python
+a.append(x)
+```
+Corresponding Cpp Code:
+```cpp
+a.push_back(nums[i]);
+```
+
+BLOCK5: 
+```python
+else:
+    b.append(x)
+```
+Corresponding Cpp Code:
+```cpp
+} else {
+    b.push_back(nums[i]);
+}
+```
+
+BLOCK6: 
+```python
+return a + b
+```
+Corresponding Cpp Code:
+```cpp
+a.insert(a.end(), b.begin(), b.end());
+return a;
+```
+","```cpp
+std::vector<int> resultArray(std::vector<int> nums) { // --- py stmt 1
+    std::vector<int> a = {nums[0]}; // --- py stmt 2
+    std::vector<int> b = {nums[1]}; // --- py stmt 3
+    for (size_t i = 2; i < nums.size(); i++) { // --- py stmt 4
+        if (a.back() > b.back()) { // --- py stmt 5
+            a.push_back(nums[i]); // --- py stmt 6
+        } else { // --- py stmt 7
+            b.push_back(nums[i]); // --- py stmt 8
+        }
+    }
+    a.insert(a.end(), b.begin(), b.end()); // --- py stmt 9
+    return a; // --- py stmt 10
+}
+```
+"
+"def maxBottlesDrunk( numBottles: int, numExchange: int) -> int:
+    ans = numBottles  
+    while numBottles >= numExchange:  
+        ans += 1  
+        numBottles += 1 - numExchange
+        numExchange += 1
+    return ans","int maxBottlesDrunk(int numBottles, int numExchange) {
+    int ans = numBottles;
+    while (numBottles >= numExchange) {
+        ans += 1;
+        numBottles += 1 - numExchange;
+        numExchange += 1;
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def maxBottlesDrunk( numBottles: int, numExchange: int) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int maxBottlesDrunk(int numBottles, int numExchange) {
+```
+
+BLOCK1: 
+```python
+ans = numBottles
+```
+Corresponding Cpp Code:
+```cpp
+int ans = numBottles;
+```
+
+BLOCK2: 
+```python
+while numBottles >= numExchange:
+```
+Corresponding Cpp Code:
+```cpp
+while (numBottles >= numExchange) {
+```
+
+BLOCK3: 
+```python
+ans += 1
+numBottles += 1 - numExchange
+numExchange += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += 1;
+numBottles += 1 - numExchange;
+numExchange += 1;
+```
+
+BLOCK4: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int maxBottlesDrunk(int numBottles, int numExchange) { // --- py stmt 1
+    int ans = numBottles; // --- py stmt 2
+    while (numBottles >= numExchange) { // --- py stmt 3
+        ans += 1; // --- py stmt 4
+        numBottles += 1 - numExchange; // --- py stmt 5
+        numExchange += 1; // --- py stmt 6
+    }
+    return ans; // --- py stmt 7
+}
+```
+"
+"def minimumSteps( s):
+    ans, sum = 0, 0
+    for i in range(len(s)):
+        if s[i] == '1':
+            sum += 1
+        else:
+            ans += sum
+    return ans","int minimumSteps(std::string s) {
+    int ans = 0, sum = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == '1') {
+            sum += 1;
+        } else {
+            ans += sum;
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def minimumSteps( s):
+```
+Corresponding Cpp Code:
+```cpp
+int minimumSteps(std::string s) {
+```
+
+BLOCK1: 
+```python
+ans, sum = 0, 0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0, sum = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(len(s)):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < s.length(); i++) {
+```
+
+BLOCK3: 
+```python
+if s[i] == '1':
+```
+Corresponding Cpp Code:
+```cpp
+if (s[i] == '1') {
+```
+
+BLOCK4: 
+```python
+sum += 1
+```
+Corresponding Cpp Code:
+```cpp
+sum += 1;
+```
+
+BLOCK5: 
+```python
+else:
+    ans += sum
+```
+Corresponding Cpp Code:
+```cpp
+} else {
+    ans += sum;
+```
+
+BLOCK6: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int minimumSteps(std::string s) { // --- py stmt 1
+    int ans = 0, sum = 0; // --- py stmt 2
+    for (int i = 0; i < s.length(); i++) { // --- py stmt 3
+        if (s[i] == '1') { // --- py stmt 4
+            sum += 1; // --- py stmt 5
+        } else { // --- py stmt 6
+            ans += sum; // --- py stmt 7
+        }
+    }
+    return ans; // --- py stmt 8
+}
+```
+"
+"def findIndices( nums: List[int], indexDifference: int, valueDifference: int) -> List[int]:
+    for i in range(len(nums)):
+        for j in range(i, len(nums)):
+            if j - i >= indexDifference and abs(nums[j] - nums[i]) >= valueDifference:
+                return [i, j]
+    return [-1, -1]","std::vector<int> findIndices(std::vector<int> nums, int indexDifference, int valueDifference) {
+    for (int i = 0; i < nums.size(); i++) {
+        for (int j = i; j < nums.size(); j++) {
+            if (j - i >= indexDifference && std::abs(nums[j] - nums[i]) >= valueDifference) {
+                return {i, j};
+            }
+        }
+    }
+    return {-1, -1};
+}","BLOCK0: 
+```python
+def findIndices( nums: List[int], indexDifference: int, valueDifference: int) -> List[int]:
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> findIndices(std::vector<int> nums, int indexDifference, int valueDifference) {
+```
+
+BLOCK1: 
+```python
+for i in range(len(nums)):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < nums.size(); i++) {
+```
+
+BLOCK2: 
+```python
+for j in range(i, len(nums)):
+```
+Corresponding Cpp Code:
+```cpp
+for (int j = i; j < nums.size(); j++) {
+```
+
+BLOCK3: 
+```python
+if j - i >= indexDifference and abs(nums[j] - nums[i]) >= valueDifference:
+```
+Corresponding Cpp Code:
+```cpp
+if (j - i >= indexDifference && std::abs(nums[j] - nums[i]) >= valueDifference) {
+```
+
+BLOCK4: 
+```python
+return [i, j]
+```
+Corresponding Cpp Code:
+```cpp
+return {i, j};
+```
+
+BLOCK5: 
+```python
+return [-1, -1]
+```
+Corresponding Cpp Code:
+```cpp
+return {-1, -1};
+```
+","```cpp
+std::vector<int> findIndices(std::vector<int> nums, int indexDifference, int valueDifference) { // --- py stmt 1
+    for (int i = 0; i < nums.size(); i++) { // --- py stmt 2
+        for (int j = i; j < nums.size(); j++) { // --- py stmt 3
+            if (j - i >= indexDifference && std::abs(nums[j] - nums[i]) >= valueDifference) { // --- py stmt 4
+                return {i, j}; // --- py stmt 5
+            }
+        }
+    }
+    return {-1, -1}; // --- py stmt 6
+}
+```
+"
+"def findChampion( n: int, edges: List[List[int]]) -> int:
+    degree = [0] * n
+    for x, y in edges:
+        degree[y] += 1
+    champion = -1
+    for i, d in enumerate(degree):
+        if d == 0:
+            if champion == -1:
+                champion = i
+            else:
+                return -1
+    return champion","int findChampion(int n, vector<vector<int>>& edges) {
+    vector<int> degree(n, 0);
+    for (auto& edge : edges) {
+        degree[edge[1]]++;
+    }
+    int champion = -1;
+    for (int i = 0; i < n; i++) {
+        if (degree[i] == 0) {
+            if (champion == -1) {
+                champion = i;
+            } else {
+                return -1;
+            }
+        }
+    }
+    return champion;
+}","BLOCK0: 
+```python
+def findChampion( n: int, edges: List[List[int]]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int findChampion(int n, vector<vector<int>>& edges) {
+```
+
+BLOCK1: 
+```python
+degree = [0] * n
+```
+Corresponding Cpp Code:
+```cpp
+vector<int> degree(n, 0);
+```
+
+BLOCK2: 
+```python
+for x, y in edges:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto& edge : edges) {
+```
+
+BLOCK3: 
+```python
+degree[y] += 1
+```
+Corresponding Cpp Code:
+```cpp
+degree[edge[1]]++;
+```
+
+BLOCK4: 
+```python
+champion = -1
+```
+Corresponding Cpp Code:
+```cpp
+int champion = -1;
+```
+
+BLOCK5: 
+```python
+for i, d in enumerate(degree):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 0; i < n; i++) {
+```
+
+BLOCK6: 
+```python
+if d == 0:
+```
+Corresponding Cpp Code:
+```cpp
+if (degree[i] == 0) {
+```
+
+BLOCK7: 
+```python
+if champion == -1:
+```
+Corresponding Cpp Code:
+```cpp
+if (champion == -1) {
+```
+
+BLOCK8: 
+```python
+champion = i
+```
+Corresponding Cpp Code:
+```cpp
+champion = i;
+```
+
+BLOCK9: 
+```python
+else:
+    return -1
+```
+Corresponding Cpp Code:
+```cpp
+} else {
+    return -1;
+}
+```
+
+BLOCK10: 
+```python
+return champion
+```
+Corresponding Cpp Code:
+```cpp
+return champion;
+```
+","```cpp
+int findChampion(int n, vector<vector<int>>& edges) { // --- py stmt 1
+    vector<int> degree(n, 0); // --- py stmt 2
+    for (auto& edge : edges) { // --- py stmt 3
+        degree[edge[1]]++; // --- py stmt 4
+    }
+    int champion = -1; // --- py stmt 5
+    for (int i = 0; i < n; i++) { // --- py stmt 6
+        if (degree[i] == 0) { // --- py stmt 7
+            if (champion == -1) { // --- py stmt 8
+                champion = i; // --- py stmt 9
+            } else { // --- py stmt 10
+                return -1; // --- py stmt 11
+            }
+        }
+    }
+    return champion; // --- py stmt 12
+}
+```
+"
+"def minIncrements( n: int, cost: List[int]) -> int:
+    ans = 0
+    for i in range(n - 2, 0, -2):
+        ans += abs(cost[i] - cost[i + 1])
+        
+        cost[i // 2] += max(cost[i], cost[i + 1])
+    return ans","int minIncrements(int n, std::vector<int>& cost) {
+    int ans = 0;
+    for (int i = n - 2; i > 0; i -= 2) {
+        ans += std::abs(cost[i] - cost[i + 1]);
+        cost[i / 2] += std::max(cost[i], cost[i + 1]);
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def minIncrements( n: int, cost: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int minIncrements(int n, std::vector<int>& cost) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+```
+
+BLOCK2: 
+```python
+for i in range(n - 2, 0, -2):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = n - 2; i > 0; i -= 2) {
+```
+
+BLOCK3: 
+```python
+ans += abs(cost[i] - cost[i + 1])
+cost[i // 2] += max(cost[i], cost[i + 1])
+```
+Corresponding Cpp Code:
+```cpp
+ans += std::abs(cost[i] - cost[i + 1]);
+cost[i / 2] += std::max(cost[i], cost[i + 1]);
+```
+
+BLOCK4: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int minIncrements(int n, std::vector<int>& cost) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    for (int i = n - 2; i > 0; i -= 2) { // --- py stmt 3
+        ans += std::abs(cost[i] - cost[i + 1]); // --- py stmt 4
+        cost[i / 2] += std::max(cost[i], cost[i + 1]); // --- py stmt 5
+    }
+    return ans; // --- py stmt 6
+}
+```
+"
+"def canTrade( n: int, beautifulness: List[int], q: int,
+             queries: List[List[int]]) -> List[int]:
+    par = [i for i in range(n)]
+    for i in range(1, n):
+        if beautifulness[i] == beautifulness[i - 1]:
+            par[i] = par[i - 1]
+        else:
+            pass
+    ans = []
+    for el in queries:
+        a, b = el[0] - 1, el[1] - 1
+        if par[a] == par[b]:
+            ans.append(1)
+        else:
+            ans.append(0)
+    return ans","std::vector<int> canTrade(int n, std::vector<int> beautifulness, int q, std::vector<std::vector<int>> queries) {
+    std::vector<int> par(n);
+    for (int i = 0; i < n; i++) {
+        par[i] = i;
+    }
+    for (int i = 1; i < n; i++) {
+        if (beautifulness[i] == beautifulness[i - 1]) {
+            par[i] = par[i - 1];
+        }
+    }
+    std::vector<int> ans;
+    for (auto el : queries) {
+        int a = el[0] - 1;
+        int b = el[1] - 1;
+        if (par[a] == par[b]) {
+            ans.push_back(1);
+        } else {
+            ans.push_back(0);
+        }
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def canTrade(n: int, beautifulness: List[int], q: int, queries: List[List[int]]) -> List[int]:
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> canTrade(int n, std::vector<int> beautifulness, int q, std::vector<std::vector<int>> queries) {
+```
+
+BLOCK1: 
+```python
+par = [i for i in range(n)]
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> par(n);
+for (int i = 0; i < n; i++) {
+    par[i] = i;
+}
+```
+
+BLOCK2: 
+```python
+for i in range(1, n):
+```
+Corresponding Cpp Code:
+```cpp
+for (int i = 1; i < n; i++) {
+```
+
+BLOCK3: 
+```python
+if beautifulness[i] == beautifulness[i - 1]:
+```
+Corresponding Cpp Code:
+```cpp
+if (beautifulness[i] == beautifulness[i - 1]) {
+```
+
+BLOCK4: 
+```python
+par[i] = par[i - 1]
+```
+Corresponding Cpp Code:
+```cpp
+par[i] = par[i - 1];
+```
+
+BLOCK5: 
+```python
+else:
+    pass
+```
+Corresponding Cpp Code:
+```cpp
+// No equivalent in Python, as Python's pass statement is used to do nothing when executed.
+```
+
+BLOCK6: 
+```python
+ans = []
+```
+Corresponding Cpp Code:
+```cpp
+std::vector<int> ans;
+```
+
+BLOCK7: 
+```python
+for el in queries:
+```
+Corresponding Cpp Code:
+```cpp
+for (auto el : queries) {
+```
+
+BLOCK8: 
+```python
+a, b = el[0] - 1, el[1] - 1
+```
+Corresponding Cpp Code:
+```cpp
+int a = el[0] - 1;
+int b = el[1] - 1;
+```
+
+BLOCK9: 
+```python
+if par[a] == par[b]:
+```
+Corresponding Cpp Code:
+```cpp
+if (par[a] == par[b]) {
+```
+
+BLOCK10: 
+```python
+ans.append(1)
+```
+Corresponding Cpp Code:
+```cpp
+ans.push_back(1);
+```
+
+BLOCK11: 
+```python
+else:
+    ans.append(0)
+```
+Corresponding Cpp Code:
+```cpp
+else {
+    ans.push_back(0);
+}
+```
+
+BLOCK12: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+std::vector<int> canTrade(int n, std::vector<int> beautifulness, int q, std::vector<std::vector<int>> queries) { // --- py stmt 1
+    std::vector<int> par(n); // --- py stmt 3
+    for (int i = 0; i < n; i++) { // --- py stmt 4
+        par[i] = i; // --- py stmt 6
+    }
+    for (int i = 1; i < n; i++) { // --- py stmt 5
+        if (beautifulness[i] == beautifulness[i - 1]) { // --- py stmt 7
+            par[i] = par[i - 1]; // --- py stmt 8
+        }
+    }
+    std::vector<int> ans; // --- py stmt 9
+    for (auto el : queries) { // --- py stmt 10
+        int a = el[0] - 1; // --- py stmt 11
+        int b = el[1] - 1; // --- py stmt 12
+        if (par[a] == par[b]) { // --- py stmt 14
+            ans.push_back(1); // --- py stmt 15
+        } else { // --- py stmt 16
+            ans.push_back(0); // --- py stmt 17
+        }
+    }
+    return ans; // --- py stmt 18
+}
+```
+
+The Python code and C++ code are almost identical, but there are some differences due to the differences in the languages. The Python code uses list comprehension, which is a more concise way to create lists in Python. The C++ code uses a for loop to create the `par` vector. The Python code also uses the `append` method to add elements to the `ans` list, while the C++ code uses the `push_back` method. The Python code also uses the `- 1` indexing to match the 0-based indexing of C++.
+"
+"def countCompleteDayPairs( hours: List[int]) -> int:
+    ans = 0
+    cnt = [0] * 24
+    for t in hours:
+        
+        
+        ans += cnt[(24 - t % 24) % 24]
+        cnt[t % 24] += 1
+    return ans","int countCompleteDayPairs(std::vector<int> hours) {
+    int ans = 0;
+    std::vector<int> cnt(24, 0);
+    for (int t : hours) {
+        ans += cnt[(24 - t % 24) % 24];
+        cnt[t % 24] += 1;
+    }
+    return ans;
+}","BLOCK0: 
+```python
+def countCompleteDayPairs(hours: List[int]) -> int:
+```
+Corresponding Cpp Code:
+```cpp
+int countCompleteDayPairs(std::vector<int> hours) {
+```
+
+BLOCK1: 
+```python
+ans = 0
+cnt = [0] * 24
+```
+Corresponding Cpp Code:
+```cpp
+int ans = 0;
+std::vector<int> cnt(24, 0);
+```
+
+BLOCK2: 
+```python
+for t in hours:
+```
+Corresponding Cpp Code:
+```cpp
+for (int t : hours) {
+```
+
+BLOCK3: 
+```python
+ans += cnt[(24 - t % 24) % 24]
+cnt[t % 24] += 1
+```
+Corresponding Cpp Code:
+```cpp
+ans += cnt[(24 - t % 24) % 24];
+cnt[t % 24] += 1;
+```
+
+BLOCK4: 
+```python
+return ans
+```
+Corresponding Cpp Code:
+```cpp
+return ans;
+```
+","```cpp
+int countCompleteDayPairs(std::vector<int> hours) { // --- py stmt 1
+    int ans = 0; // --- py stmt 2
+    std::vector<int> cnt(24, 0); // --- py stmt 3
+    for (int t : hours) { // --- py stmt 4
+        ans += cnt[(24 - t % 24) % 24]; // --- py stmt 5
+        cnt[t % 24] += 1; // --- py stmt 6
+    }
+    return ans; // --- py stmt 7
+}
+```
+"
