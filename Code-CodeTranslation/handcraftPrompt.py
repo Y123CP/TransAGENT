@@ -208,6 +208,7 @@ Given the Test Cases:
 {Input_output}
 
 ## Translate the `{source_Lan} Code` into the equivalent {target_Lan} function code (only one equivalent function), and ensure the translated function code can pass all given test cases. NOTE: The translated {target_Lan} function Code should use  ``{Method_signature}`` as method name (Include the necessary import statement), and be wrapped within ``` ```!!! ##
+## Rule: When translating the `{source_Lan} Code` into the `{target_Lan} Code`, please follow the Control Flow Graph (CFG) structure of the source code. 
 ## Output:
 '''
 
